@@ -1,32 +1,21 @@
-# electron-quick-start
+# Pruebas tipo saber version de escritorio para profesores
 
-**Clone and run for a quick way to see an Electron in action.**
-
-This is a minimal Electron application based on the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start) within the Electron documentation.
-
-**Use this app along with the [Electron API Demos](http://electron.atom.io/#get-started) app for API code examples to help you get started.**
-
-A basic Electron application needs just these files:
-
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within the [Quick Start Guide](http://electron.atom.io/docs/latest/tutorial/quick-start).
+Aplicacion para las pruebas tipo saber. Esta aplicacion creara las pruebas.
 
 ## To Use
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Para contribuir a esta aplicacion es necesario tener node.js instalado [Node.js](https://nodejs.org/en/download/). desde CMD ejecutar:
 
 ```bash
-# Clone this repository
+# Clonar el repositorio de electron
 git clone https://github.com/electron/electron-quick-start
-# Go into the repository
+# desplazarse al repositorio
 cd electron-quick-start
-# Install dependencies and run the app
+# instalar dependencias y ejecutar la aplicacion
 npm install && npm start
+#desplazarse a la carpeta donde estaran los archivos fuentes
+cd node_modules\electron\dist\resources\app
+#clonar este repositorio
+git clone https://github.com/cier-centro/saber-docentes.git
 ```
 
-Learn more about Electron and its API in the [documentation](http://electron.atom.io/docs/latest).
-
-#### License [CC0 (Public Domain)](LICENSE.md)
