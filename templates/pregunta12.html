@@ -1,0 +1,21 @@
+<ion-view title="{{question_to_render.name}}" id="page2" class=" ">
+    <ion-content padding="true" class="has-header">
+        <div class="list card " id="pregunta1-card22">
+            <ion-item id="pregunta1-list-item6" class="  ">Item</ion-item>
+            <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
+                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+            </div>
+            <div class="item item-body " id="pregunta1-list-item-container3">
+                <p id="pregunta1-null" style="margin-top:0px;color:#000000;" class=" ">Some friendly
+                    <strong>markdown</strong>
+                </p>
+                <form id="pregunta1-form4" class="list ">
+					<ion-item ng-repeat="answer in question_to_render.choices">
+						<ion-checkbox name="{{answer}}">{{answer}}</ion-checkbox>
+					</ion-item>
+                    <a id="pregunta1-button2" class=" button button-positive  button-block "  ng-click="next_question()" >Tap me!</a>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
