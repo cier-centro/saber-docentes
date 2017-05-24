@@ -1,21 +1,47 @@
-cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicModal', '$ionicScrollDelegate',
+cont_angular.controller('showTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicModal', '$ionicScrollDelegate',
     function ($scope, $stateParams, $ionicPopup, $state, $ionicModal, $ionicScrollDelegate) {
         if (selected_questions.length == 0) {
             $state.go("dbasselection");
         }
 
+        $scope.findQuestion = function (id) {
+            for (var k in questions_data) {
+                for (var k2 in questions_data[k]["questions"]) {
+                    if (questions_data[k]["questions"][k2].id == id) {
+                        return questions_data[k]["questions"][k2]
+                    }
+                }
+            }
+        }
+        var renderCanvas = function(){
+          for(var q in user_answers){
+            var que=user_answers[q].question
+            if(que.type==1){
+              $scope.loadPDFAng(que.file, q)
+            }
+          }
+        }
+
+
 
         $scope.$on('$ionicView.enter', function () {
+            user_answers=[]
+            for(var q in selected_questions){
+              var que=$scope.findQuestion(selected_questions[q])
+              user_answers.push({"question": que})
+            }
             $scope.questions = user_answers;
             $scope.infoquestions = questions_data;
             $scope.name = user_name;
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            MathJax.Hub.Queue([renderCanvas, MathJax.Hub]);
         })
 
         $scope.loadPDFAng = function (file,group) {
+          console.log("pdf_viewer_"+group)
             document.getElementById("pdf_viewer_"+group).style.display="block"
-            document.getElementById("btn_canvas_"+group).style.display="none"
+            //document.getElementById("btn_canvas_"+group).style.display="none"
             loadFirstPagePDF("contents/"+file,"pdf_viewer_"+group);
             $ionicScrollDelegate.resize();
         }
@@ -149,17 +175,44 @@ cont_angular.controller('feedbackTestCtrl', ['$scope', '$stateParams', '$ionicPo
 
 
         $scope.Print = function () {
+          $ionicScrollDelegate.scrollTop();
     			const electron= nodeRequire('electron').remote;
     			const fs = nodeRequire('fs');
-    			let win = electron.BrowserWindow.getFocusedWindow();
-    			console.log(win)
-                win.webContents.printToPDF({
-    			  landscape: false
-    			}, function(err, data) {
-    			  var dist = 'C:\\Users\\jeanpierre\\Desktop\\test.pdf'
-    			  fs.writeFile(dist, data, function(err) {
-    				if(err) alert('genearte pdf error', err)
-    			  })
-    			})
+          const dialog = electron.dialog;
+          dialog.showSaveDialog({filters:[{name: 'Resultado prueba tipo saber', extensions: ['pdf']}]}, function (fileNames) {
+            if (fileNames === undefined) return;
+            let win = electron.BrowserWindow.getFocusedWindow();
+      			console.log(win)
+            win.webContents.printToPDF({
+  		           landscape: false
+  		      }, function(err, data) {
+              var dist = fileNames;
+              console.log(dist)
+              fs.writeFile(dist, data, function(err) {
+                if(err) alert('genearte pdf error', err)
+              })
+            })
+          });
+
+        };
+
+        $scope.saveQuestionary = function () {
+    			const electron= nodeRequire('electron').remote;
+    			const fs = nodeRequire('fs');
+          const dialog = electron.dialog;
+          dialog.showSaveDialog({filters:[{name: 'Resultado prueba tipo saber', extensions: ['prueba']}]}, function (fileNames) {
+            if (fileNames === undefined) return;
+            let win = electron.BrowserWindow.getFocusedWindow();
+            var contents = test_name+"\n";
+            var codes=[];
+            for(var q in user_answers){
+              codes.push(user_answers[q].question.cod_question)
+            }
+            contents+=codes.join(",");
+            fs.writeFile(fileNames, contents, function(err) {
+              if(err) alert('genearte pdf error', err)
+            })
+          });
+
         };
     }])

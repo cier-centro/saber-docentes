@@ -6,10 +6,15 @@ angular.module('app.routes', [])
                         templateUrl: 'templates/startPage.html',
                         controller: 'startPageCtrl'
                     })
-                    .state('dbasselection', {
+                    .state('select_test_type', {
+                        url: '/selectType',
+                        templateUrl: 'templates/SelectTestType.html',
+                        controller: 'selectTestTypeCTRL'
+                    })
+                    .state('select_dba', {
                         url: '/selectDbas',
-                        templateUrl: 'templates/selectDbas.html',
-                        controller: 'constructTestCtrl'
+                        templateUrl: 'templates/SelectDbas.html',
+                        controller: 'selectDbasCTRL'
                     })
                     .state('selectQuestions', {
                         url: '/selectQuestions',
@@ -23,11 +28,11 @@ angular.module('app.routes', [])
                         templateUrl: 'templates/askQuestion.html',
                         controller: 'askTestCtrl'
                     })
-                    .state('answersFeedback', {
-                        url: '/answersFeedback',
+                    .state('show_test', {
+                        url: '/showTest',
                         cache: false,
-                        templateUrl: 'templates/answersFeedback.html',
-                        controller: 'feedbackTestCtrl'
+                        templateUrl: 'templates/ShowTest.html',
+                        controller: 'showTestCtrl'
                     })
             $urlRouterProvider.otherwise('/start')
         });

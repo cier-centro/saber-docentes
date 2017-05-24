@@ -1,10 +1,13 @@
 var selected_dbas = [];
 var max_questions = 0;
 var user_name = "";
+var test_name = "";
 var questions_data = {};
 var selected_questions = [];
 var current_question = 0;
 var user_answers = {};
+var selected_level= 0;
+var selected_asignare = "Y";
 
 function shuffle(a) {
     var j, x, i;

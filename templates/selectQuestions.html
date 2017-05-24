@@ -1,6 +1,6 @@
 <ion-view hide-nav-bar="true" id="page6">
     <ion-content padding="true">
-        
+
         <div class="principal-header" >
             <div class="row">
                 <div class="col col-50" align="center">
@@ -16,7 +16,7 @@
                 </div>
 			</div>
         </div>
-        
+
         <form id="question_list" class="list">
             <h3 id="page3-heading3" style="color:#000000;">Preguntas seleccionadas <span style="margin-left:5em"> {{data.numberofquestions}}/{{data.max_questions}} </span></h3>
 
@@ -36,22 +36,22 @@
 
                     <div class="row" ng-repeat="question in dba.questions">
                         <div class="col-90">
-                            <ion-checkbox class="item-accordion"                                              
+                            <ion-checkbox class="item-accordion"
                                           name="{{question.id}}"
                                           ng-click="setCounter($event)"
-                                          ng-show="isGroupShown(dba)"><p style="margin-left:2.5em"> {{question.header_question}}</p> 
+                                          ng-show="isGroupShown(dba)"><p style="margin-left:2.5em"> {{question.header_question}}</p>
 
                             </ion-checkbox>
                         </div>
                         <div class="col-10" style="vertical-align:central">
-                            <a id="button_{{question.id}}" class="button button-royal" ng-click="showDetail($event,question)" ng-show="isGroupShown(dba)" style="width:100%"><i class="icon" ng-class="'ion-eye'"></i></a>                                
+                            <a id="button_{{question.id}}" class="button button-royal" ng-click="showDetail($event,question)" ng-show="isGroupShown(dba)" style="width:100%"><i class="icon" ng-class="'ion-eye'"></i></a>
                         </div>
                     </div>
                 </div>
             </ion-list>
-            
+
         </form>
-        
+
         <div id="page-button-bar9" class="button-bar">
             <div class="row">
                 <div class="col-33">
@@ -60,10 +60,10 @@
                 <div class="col-33">
                 </div>
                 <div class="col-33">
-                    <a id="page-button11" class="button button-positive  button-block" ng-click="showPopup()">Iniciar prueba</a>
+                    <a id="page-button11" class="button button-positive  button-block" ng-click="showTest()">Visualizar Prueba</a>
                 </div>
             </div>
         </div>
-        
+
     </ion-content>
 </ion-view>
