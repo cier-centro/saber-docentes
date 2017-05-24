@@ -215,4 +215,9 @@ cont_angular.controller('showTestCtrl', ['$scope', '$stateParams', '$ionicPopup'
           });
 
         };
+
+
+        $scope.answerSheet=function(){
+          $state.go("show_answer_sheet")
+        }
     }])

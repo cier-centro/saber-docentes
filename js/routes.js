@@ -34,5 +34,11 @@ angular.module('app.routes', [])
                         templateUrl: 'templates/ShowTest.html',
                         controller: 'showTestCtrl'
                     })
+                    .state('show_answer_sheet', {
+                        url: '/showAnswerSheet',
+                        cache: false,
+                        templateUrl: 'templates/ShowAnswerSheet.html',
+                        controller: 'showAnswerSheetCtrl'
+                    })
             $urlRouterProvider.otherwise('/start')
         });
