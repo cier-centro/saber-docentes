@@ -1,6 +1,11 @@
 angular.module('app.routes', [])
         .config(function ($stateProvider, $urlRouterProvider) {
             $stateProvider
+                    .state('start', {
+                        url: '/start',
+                        templateUrl: 'templates/startPage.html',
+                        controller: 'startPageCtrl'
+                    })
                     .state('dbasselection', {
                         url: '/selectDbas',
                         templateUrl: 'templates/selectDbas.html',
@@ -24,5 +29,5 @@ angular.module('app.routes', [])
                         templateUrl: 'templates/answersFeedback.html',
                         controller: 'feedbackTestCtrl'
                     })
-            $urlRouterProvider.otherwise('/selectDbas')
+            $urlRouterProvider.otherwise('/start')
         });
