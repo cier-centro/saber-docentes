@@ -4,22 +4,33 @@
  */
 
 .warning-message {
-  .warning-icon {
-    @include flex(0, 0, 70px);
-    max-width: 70px;
-    height: 70px;
-    background: url('../../../img/img_light_bulb.png') no-repeat center/contain;
-  }
+  .row {
+    position: relative;
+    
+    .warning-icon {
+      @include flex(0, 0, 70px);
+      max-width: 70px;
+      height: 70px;
+      background: url('../../../img/img_light_bulb.png') no-repeat center/contain;
+    }
 
-  .button-container {
-    @include flex(0, 0, 50px);
-    max-width: 50px;
-    height: 50px;
-  }
+    .warning-text{
+      padding-right: 50px;
+    }
 
-  .button {
-    min-height: 40px;
-    min-width: 40px;
-    padding: 0;
+    .button-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include flex(0, 0, 50px);
+      max-width: 50px;
+      height: 50px;
+    }
+
+    .button {
+      min-height: 40px;
+      min-width: 40px;
+      padding: 0;
+    }
   }
 }
