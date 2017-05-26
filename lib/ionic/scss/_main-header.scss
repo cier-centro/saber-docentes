@@ -1,0 +1,68 @@
+/**
+ * Header Styles
+ * --------------------------------------------------
+ */
+
+.principal-header {
+  .logo-container {
+    align-items: center;
+
+    div:first-child {
+      background: url('../../../img/pruebas_saber.jpg') no-repeat center/contain;
+      @include flex(0, 0, 150px);
+      max-width: 150px;
+      height: 80px;
+    }
+    .title-container {
+      * {
+        margin: 0;
+      }
+    }
+  }
+
+  .header-logos {
+    div {
+      height: 70px;
+      @include flex(0, 0, 33.3333%);
+      max-width: 33.3333%;
+
+      &:first-child {
+        margin-left: 0%;
+        background: url('../../../img/pruebas_saber.jpg') no-repeat center/contain;
+      }
+      &:nth-child(2) {
+        background: url('../../../img/pruebas_saber.jpg') no-repeat center/contain;
+      }
+      &:nth-child(3) {
+        background: url('../../../img/pruebas_saber.jpg') no-repeat center/contain;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .logo-container {
+      justify-content: left;
+    }
+
+    .header-logos {
+      div {
+        @include flex(0, 0, 30%);
+        max-width: 30%;
+
+        &:first-child {
+          margin-left: 10%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .logo-container {
+      justify-content: center;
+
+      .col {
+        margin: 0 !important;
+      }
+    }
+  }
+}

@@ -9508,4 +9508,67 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-/*# sourceMappingURL=ionic.app.css.map */
+/**
+ * New Styles
+ * --------------------------------------------------
+ */
+.warning-message .warning-icon {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 90px;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 90px;
+  -ms-flex: 0 0 90px;
+  flex: 0 0 90px;
+  max-width: 90px;
+  height: 90px; }
+
+.principal-header .logo-container {
+  align-items: center; }
+  .principal-header .logo-container div:first-child {
+    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 150px;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 150px;
+    -ms-flex: 0 0 150px;
+    flex: 0 0 150px;
+    max-width: 150px;
+    height: 80px; }
+  .principal-header .logo-container .title-container * {
+    margin: 0; }
+.principal-header .header-logos div {
+  height: 70px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 33.3333%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 33.3333%;
+  -ms-flex: 0 0 33.3333%;
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%; }
+  .principal-header .header-logos div:first-child {
+    margin-left: 0%;
+    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain; }
+  .principal-header .header-logos div:nth-child(2) {
+    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain; }
+  .principal-header .header-logos div:nth-child(3) {
+    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain; }
+@media (min-width: 768px) {
+  .principal-header .logo-container {
+    justify-content: left; }
+  .principal-header .header-logos div {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 30%;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%; }
+    .principal-header .header-logos div:first-child {
+      margin-left: 10%; } }
+@media (max-width: 767px) {
+  .principal-header .logo-container {
+    justify-content: center; }
+    .principal-header .logo-container .col {
+      margin: 0 !important; } }
+
+/*# sourceMappingURL=ionic.css.map */
