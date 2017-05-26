@@ -9596,4 +9596,11 @@ a.button {
     min-width: 40px;
     padding: 0; }
 
+form .item-select {
+  height: 47px; }
+  form .item-select select {
+    width: 100%;
+    max-width: 100%;
+    direction: ltr; }
+
 /*# sourceMappingURL=ionic.css.map */

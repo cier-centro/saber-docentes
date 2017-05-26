@@ -26,21 +26,15 @@
 
             <div class="row responsive-md">
                 <div class="col col-50">
-                    <label>
-                        <span class="input-label">Nombre de la prueba</span>
-                    </label>
                     <label class="item item-input">
-                      <input type="text" ng-model="data.test_name" placeholder="Nombre de la prueba">
+                      <input type="text" ng-model="data.test_name" placeholder="NOMBRE DE LA PRUEBA">
                     </label>
                 </div>
 
                 <div class="col col-50">
-                    <label>
-                        <span class="input-label">Asignatura</span>
-                    </label>
                     <label class="item item-select" id="page-select1">
                         <select ng-model="data.id_asignature" ng-change="getDbaData()">
-                            <option value="NA">Seleccione...</option>
+                            <option value="NA">SELECCIONE ASIGNATURA</option>
                             <option value="L">Lenguaje</option>
                             <option value="M">Matemáticas</option>
                         </select>
@@ -51,12 +45,9 @@
               <div class="row responsive-md">
 
                 <div class="col col-50">
-                    <label>
-                        <span class="input-label">Curso</span>
-                    </label>
                     <label class="item item-select" >
                         <select ng-model="data.grade" ng-change="getDbaData()" >
-                            <option value="0">Seleccione...</option>
+                            <option value="0">SELECCIONE GRADO</option>
                             <option value="3">Tercero</option>
                             <option value="5">Quinto</option>
                             <option value="7">Séptimo</option>
@@ -67,9 +58,9 @@
                 </div>
 
                 <div class="col col-50">
-                    <label><span class="input-label">N° de preguntas (5-25)[{{data.max_questions}}] </span></label>
                     <label class="item item-select">
                         <select ng-model="data.max_questions">
+                            <option value="0">SELECCIONE NÚMERO DE PREGUNTAS (5 A 25)</option>
                             <option value="5">5</option>
                             <option value="6">6</option>
                             <option value="7">7</option>
