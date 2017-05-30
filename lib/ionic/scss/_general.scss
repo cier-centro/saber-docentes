@@ -1,0 +1,11 @@
+body * {
+  font-family: 'arial';
+}
+
+ion-content {
+  background: $green-background;
+
+  .scroll {
+    padding: 0 !important;
+  }
+}

@@ -9508,58 +9508,83 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+body * {
+  font-family: 'arial'; }
+
+ion-content {
+  background: #4fbab4; }
+  ion-content .scroll {
+    padding: 0 !important; }
+
 /**
  * Header Styles
  * --------------------------------------------------
  */
-.principal-header .logo-container {
-  align-items: center; }
-  .principal-header .logo-container div:first-child {
-    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 150px;
-    -moz-box-flex: 0;
-    -moz-flex: 0 0 150px;
-    -ms-flex: 0 0 150px;
-    flex: 0 0 150px;
-    max-width: 150px;
-    height: 80px; }
-  .principal-header .logo-container .title-container * {
-    margin: 0; }
-.principal-header .header-logos div {
-  height: 70px;
+.logo-container-item-size, .principal-header .logo-container div:first-child, .principal-header .logo-container div:nth-child(2) {
   -webkit-box-flex: 0;
-  -webkit-flex: 0 0 33.3333%;
+  -webkit-flex: 0 0 80px;
   -moz-box-flex: 0;
-  -moz-flex: 0 0 33.3333%;
-  -ms-flex: 0 0 33.3333%;
-  flex: 0 0 33.3333%;
-  max-width: 33.3333%; }
-  .principal-header .header-logos div:first-child {
-    margin-left: 0%;
-    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain; }
-  .principal-header .header-logos div:nth-child(2) {
-    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain; }
-  .principal-header .header-logos div:nth-child(3) {
-    background: url("../../../img/pruebas_saber.jpg") no-repeat center/contain; }
-@media (min-width: 768px) {
+  -moz-flex: 0 0 80px;
+  -ms-flex: 0 0 80px;
+  flex: 0 0 80px;
+  max-width: 80px;
+  height: 80px; }
+
+.principal-header {
+  background: white; }
   .principal-header .logo-container {
-    justify-content: left; }
+    align-items: center; }
+    .principal-header .logo-container div:first-child {
+      background: url("../../../img/logo_header_girl.gif") no-repeat center/contain; }
+    .principal-header .logo-container div:nth-child(2) {
+      background: url("../../../img/logo_header_owl.gif") no-repeat center/contain;
+      margin: 0 10px 0 15px; }
+    .principal-header .logo-container .title-container * {
+      margin: 0;
+      color: #4fbab4; }
+    .principal-header .logo-container .title-container h4 {
+      font-size: 32px; }
+    .principal-header .logo-container .title-container h5 {
+      font-size: 16px; }
   .principal-header .header-logos div {
+    height: 70px;
     -webkit-box-flex: 0;
-    -webkit-flex: 0 0 30%;
+    -webkit-flex: 0 0 33.3333%;
     -moz-box-flex: 0;
-    -moz-flex: 0 0 30%;
-    -ms-flex: 0 0 30%;
-    flex: 0 0 30%;
-    max-width: 30%; }
+    -moz-flex: 0 0 33.3333%;
+    -ms-flex: 0 0 33.3333%;
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%; }
     .principal-header .header-logos div:first-child {
-      margin-left: 10%; } }
-@media (max-width: 767px) {
-  .principal-header .logo-container {
-    justify-content: center; }
-    .principal-header .logo-container .col {
-      margin: 0 !important; } }
+      margin-left: 0%;
+      background: url("../../../img/logo_gob_cundinamarca.gif") no-repeat center/contain; }
+    .principal-header .header-logos div:nth-child(2) {
+      background: url("../../../img/logo_cier_centro.gif") no-repeat center/contain; }
+    .principal-header .header-logos div:nth-child(3) {
+      background: url("../../../img/logo_unal.gif") no-repeat center/contain; }
+  @media (min-width: 768px) {
+    .principal-header .logo-container {
+      justify-content: left; }
+    .principal-header .header-logos div {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 27%;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 27%;
+      -ms-flex: 0 0 27%;
+      flex: 0 0 27%;
+      max-width: 27%; }
+      .principal-header .header-logos div:first-child {
+        margin-left: 13%; }
+      .principal-header .header-logos div:nth-child(2) {
+        margin: 0 3%; } }
+  @media (max-width: 767px) {
+    .principal-header .logo-container {
+      justify-content: center; }
+      .principal-header .logo-container .col {
+        margin-bottom: 0 !important; }
+    .principal-header .header-logos {
+      max-width: 350px;
+      margin: auto; } }
 
 /**
  * Warning Message Styles
