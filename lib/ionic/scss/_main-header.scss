@@ -86,6 +86,10 @@
       }
     }
 
+    & > .row > div {
+      margin-bottom: 0 !important;
+    }
+
     .header-logos {
       max-width: 350px;
       margin: auto;

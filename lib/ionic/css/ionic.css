@@ -9582,6 +9582,8 @@ ion-content {
       justify-content: center; }
       .principal-header .logo-container .col {
         margin-bottom: 0 !important; }
+    .principal-header > .row > div {
+      margin-bottom: 0 !important; }
     .principal-header .header-logos {
       max-width: 350px;
       margin: auto; } }
