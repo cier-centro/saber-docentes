@@ -3,5 +3,8 @@ cont_angular.controller('startPageCtrl', ['$scope', '$stateParams', '$ionicPopup
         $scope.buildTest=function(){
           $state.go("select_test_type")
         }
+        $scope.hide=function(a){
+          document.getElementById(a).style.display="none";
+        }
 
     }]);

@@ -9511,10 +9511,53 @@ a.button {
 body * {
   font-family: 'arial'; }
 
+/*ion-nav-view {
+  margin-top: 132px;
+
+  @media (max-width: 767px) {
+    & {
+      margin-top: 235px;
+    }
+  }
+}*/
 ion-content {
-  background: #4fbab4; }
+  background: #4fbab4;
+  -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
+  margin-top: 132px !important; }
   ion-content .scroll {
     padding: 0 !important; }
+  ion-content .white-paragraph {
+    color: white;
+    font-size: 18px;
+    line-height: 120%; }
+  ion-content .button {
+    background: transparent url("../../../img/img_spritesheet.png") no-repeat;
+    border-bottom: 2px solid white;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    padding-left: 50px; }
+    ion-content .button:hover {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.2); }
+
+.start-content {
+  padding: 50px 5%; }
+  .start-content h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 110%; }
+  .start-content .row {
+    margin: 35px 0; }
+  .start-content .start-image {
+    background: url("../../../img/img_start_content.png") no-repeat center/contain;
+    min-height: 300px; }
+  .start-content .button {
+    background-position: -25px -100px; }
 
 /**
  * Header Styles
@@ -9584,6 +9627,8 @@ ion-content {
         margin-bottom: 0 !important; }
     .principal-header > .row > div {
       margin-bottom: 0 !important; }
+      .principal-header > .row > div:nth-child(2) {
+        display: none; }
     .principal-header .header-logos {
       max-width: 350px;
       margin: auto; } }
@@ -9592,36 +9637,53 @@ ion-content {
  * Warning Message Styles
  * --------------------------------------------------
  */
-.warning-message .row {
-  position: relative; }
-  .warning-message .row .warning-icon {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 70px;
-    -moz-box-flex: 0;
-    -moz-flex: 0 0 70px;
-    -ms-flex: 0 0 70px;
-    flex: 0 0 70px;
-    max-width: 70px;
-    height: 70px;
-    background: url("../../../img/img_light_bulb.png") no-repeat center/contain; }
-  .warning-message .row .warning-text {
-    padding-right: 50px; }
-  .warning-message .row .button-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 50px;
-    -moz-box-flex: 0;
-    -moz-flex: 0 0 50px;
-    -ms-flex: 0 0 50px;
-    flex: 0 0 50px;
-    max-width: 50px;
-    height: 50px; }
-  .warning-message .row .button {
-    min-height: 40px;
-    min-width: 40px;
-    padding: 0; }
+.warning-message {
+  background: #bde1e3;
+  margin: 0 5% 50px;
+  -webkit-box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25); }
+  .warning-message .row {
+    position: relative; }
+    .warning-message .row .warning-icon {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 80px;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 80px;
+      -ms-flex: 0 0 80px;
+      flex: 0 0 80px;
+      max-width: 80px;
+      height: 80px;
+      background: url("../../../img/img_spritesheet.png") no-repeat -6px -6px;
+      margin: 0 10px; }
+    .warning-message .row .warning-text {
+      padding-right: 55px;
+      color: #293053;
+      font-size: 15px; }
+    .warning-message .row .button-container {
+      position: absolute;
+      top: 5px;
+      right: 7px;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 50px;
+      -moz-box-flex: 0;
+      -moz-flex: 0 0 50px;
+      -ms-flex: 0 0 50px;
+      flex: 0 0 50px;
+      max-width: 50px;
+      height: 50px; }
+    .warning-message .row .button {
+      min-height: 40px;
+      min-width: 40px;
+      padding: 0;
+      background: #4fbab4;
+      color: #bde1e3;
+      border: none;
+      border-radius: 0; }
+      .warning-message .row .button:before {
+        padding: 0; }
+      .warning-message .row .button:hover {
+        background: #45a29d; }
 
 form .item-select {
   height: 47px; }

@@ -88,6 +88,10 @@
 
     & > .row > div {
       margin-bottom: 0 !important;
+
+      &:nth-child(2) {
+        display: none;
+      }
     }
 
     .header-logos {

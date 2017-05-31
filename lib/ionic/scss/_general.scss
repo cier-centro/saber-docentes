@@ -2,10 +2,64 @@ body * {
   font-family: 'arial';
 }
 
+/*ion-nav-view {
+  margin-top: 132px;
+
+  @media (max-width: 767px) {
+    & {
+      margin-top: 235px;
+    }
+  }
+}*/
+
 ion-content {
   background: $green-background;
+  -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
+  -moz-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
+  box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
+  margin-top: 132px !important;
 
   .scroll {
     padding: 0 !important;
+  }
+  .white-paragraph {
+    color: white;
+    font-size: 18px;
+    line-height: 120%;
+  }
+  .button {
+    background: transparent url('../../../img/img_spritesheet.png') no-repeat;
+    border-bottom: 2px solid white;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    padding-left: 50px;
+
+    &:hover {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.start-content {
+  padding: 50px 5%;
+
+  h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 110%;
+  }
+  .row {
+    margin: 35px 0;
+  }
+  .start-image {
+    background: url('../../../img/img_start_content.png') no-repeat center/contain;
+    min-height: 300px;
+  }
+  .button {
+    background-position: -25px -100px;
   }
 }
