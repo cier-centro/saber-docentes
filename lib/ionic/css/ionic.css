@@ -9511,15 +9511,6 @@ a.button {
 body * {
   font-family: 'arial'; }
 
-/*ion-nav-view {
-  margin-top: 132px;
-
-  @media (max-width: 767px) {
-    & {
-      margin-top: 235px;
-    }
-  }
-}*/
 ion-content {
   background: #4fbab4;
   -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
@@ -9533,7 +9524,7 @@ ion-content {
     font-size: 18px;
     line-height: 120%; }
   ion-content .button {
-    background: transparent url("../../../img/img_spritesheet.png") no-repeat;
+    background: rgba(255, 255, 255, 0.2) url("../../../img/img_spritesheet.png") no-repeat;
     border-bottom: 2px solid white;
     text-transform: uppercase;
     color: white;
@@ -9541,23 +9532,84 @@ ion-content {
     padding-left: 50px; }
     ion-content .button:hover {
       color: white;
-      background-color: rgba(255, 255, 255, 0.2); }
+      background-color: rgba(255, 255, 255, 0.1); }
+  ion-content .item-radio, ion-content .item-radio .item-content {
+    background: transparent;
+    border: none; }
+  ion-content .item-radio input + .radio-content .item-content {
+    background: rgba(255, 255, 255, 0.2);
+    border-bottom: 2px solid white; }
+  ion-content .item-radio input:checked + .radio-content {
+    height: 75px;
+    width: calc(100% - 5px); }
+  ion-content .item-radio input:checked + .radio-content .item-content {
+    background: #ec6745;
+    border: none;
+    -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4); }
+  ion-content .item-radio .radio-content .item-content {
+    padding: 16px 16px 16px 70px;
+    height: 70px;
+    display: flex;
+    align-items: center; }
+  ion-content .item-radio .radio-content .radio-icon {
+    right: none;
+    visibility: visible;
+    left: 0;
+    width: 63px;
+    background: url("../../../img/img_spritesheet.png") no-repeat; }
+  ion-content .item-radio span {
+    color: white;
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 600; }
+  ion-content .item-radio .ion-checkmark:before {
+    content: ""; }
+  ion-content .input-text-styles, ion-content .item-select select, ion-content .item-input input {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #919091; }
+  ion-content .item-select {
+    height: 55px !important; }
+  ion-content .item-select, ion-content .item-input {
+    border: 4px solid #bde1e3;
+    -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3); }
+  @media (max-width: 767px) {
+    ion-content {
+      margin-top: 0 !important; } }
 
-.start-content {
+.manual-test-option .item-radio input + .radio-content .radio-icon {
+  background-position: -105px -90px; }
+.manual-test-option .item-radio input:checked + .radio-content .radio-icon {
+  background-position: -105px -11px; }
+
+.random-test-option .item-radio input + .radio-content .radio-icon {
+  background-position: -180px -90px; }
+.random-test-option .item-radio input:checked + .radio-content .radio-icon {
+  background-position: -180px -11px; }
+
+.start-content, .create-test-content {
   padding: 50px 5%; }
-  .start-content h1 {
+  .start-content h1, .create-test-content h1 {
     color: white;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 55px;
     line-height: 110%; }
-  .start-content .row {
+  .start-content .row:first-child, .create-test-content .row:first-child {
     margin: 35px 0; }
-  .start-content .start-image {
-    background: url("../../../img/img_start_content.png") no-repeat center/contain;
-    min-height: 300px; }
-  .start-content .button {
-    background-position: -25px -100px; }
+
+.start-content .start-image {
+  background: url("../../../img/img_start_content.png") no-repeat center/contain;
+  min-height: 300px; }
+.start-content .button {
+  background-position: -25px -100px; }
+
+.create-test-content .button {
+  background-position: -25px -100px; }
 
 /**
  * Header Styles
@@ -9573,6 +9625,9 @@ ion-content {
   max-width: 80px;
   height: 80px; }
 
+@media (max-width: 767px) {
+  .header-bar {
+    display: none; } }
 .principal-header {
   background: white; }
   .principal-header .logo-container {

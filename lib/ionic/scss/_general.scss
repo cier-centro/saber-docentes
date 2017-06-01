@@ -2,16 +2,6 @@ body * {
   font-family: 'arial';
 }
 
-/*ion-nav-view {
-  margin-top: 132px;
-
-  @media (max-width: 767px) {
-    & {
-      margin-top: 235px;
-    }
-  }
-}*/
-
 ion-content {
   background: $green-background;
   -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
@@ -28,7 +18,7 @@ ion-content {
     line-height: 120%;
   }
   .button {
-    background: transparent url('../../../img/img_spritesheet.png') no-repeat;
+    background: $white-button-background url('../../../img/img_spritesheet.png') no-repeat;
     border-bottom: 2px solid white;
     text-transform: uppercase;
     color: white;
@@ -37,12 +27,126 @@ ion-content {
 
     &:hover {
       color: white;
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .item-radio {
+    &, & .item-content {
+      background: transparent;
+      border: none;
+    }
+    input {
+      & + .radio-content .item-content {
+        background: $white-button-background;
+        border-bottom: 2px solid white;
+      }
+
+      &:checked + .radio-content {
+        & {
+          height: 75px;
+          width: calc(100% - 5px);
+        }
+
+        .item-content {
+          background: $selected-option-background;
+          border: none;
+          -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+          -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+          box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+    .radio-content {
+      .item-content {
+        padding: 16px 16px 16px 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+      }
+      .radio-icon {
+        right: none;
+        visibility: visible;
+        left: 0;
+        width: 63px;
+        background: url('../../../img/img_spritesheet.png') no-repeat;
+      }
+    }
+    span {
+      color: white;
+      text-transform: uppercase;
+      font: {
+        size: 22px;
+        weight: 600;
+      }
+    }
+
+    .ion-checkmark:before {
+      content: "";
+    }
+  }
+
+  .input-text-styles {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $input-text-color;
+  }
+
+  .item-select {
+    height: 55px !important;
+
+    select {
+      @extend .input-text-styles;
+    }
+  }
+
+  .item-input {
+    input {
+      @extend .input-text-styles;
+    }
+  }
+
+  .item-select, .item-input {
+    border: 4px solid $warning-background;
+    -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 767px) {
+    & {
+      margin-top: 0 !important;
     }
   }
 }
 
-.start-content {
+.manual-test-option {
+  .item-radio {
+    input {
+      & + .radio-content .radio-icon {
+        background-position: -105px -90px;
+      }
+      &:checked + .radio-content .radio-icon {
+        background-position: -105px -11px;
+      }
+    }
+  }
+}
+
+.random-test-option {
+  .item-radio {
+    input {
+      & + .radio-content .radio-icon {
+        background-position: -180px -90px;
+      }
+      &:checked + .radio-content .radio-icon {
+        background-position: -180px -11px;
+      }
+    }
+  }
+}
+
+.start-content, .create-test-content {
   padding: 50px 5%;
 
   h1 {
@@ -52,13 +156,22 @@ ion-content {
     font-size: 55px;
     line-height: 110%;
   }
-  .row {
+  .row:first-child {
     margin: 35px 0;
   }
+}
+
+.start-content {
   .start-image {
     background: url('../../../img/img_start_content.png') no-repeat center/contain;
     min-height: 300px;
   }
+  .button {
+    background-position: -25px -100px;
+  }
+}
+
+.create-test-content {
   .button {
     background-position: -25px -100px;
   }
