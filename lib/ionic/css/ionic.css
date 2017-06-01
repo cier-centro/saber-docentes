@@ -9524,12 +9524,18 @@ ion-content {
     font-size: 18px;
     line-height: 120%; }
   ion-content .button {
-    background: rgba(255, 255, 255, 0.2) url("../../../img/img_spritesheet.png") no-repeat;
+    background: rgba(255, 255, 255, 0.2);
     border-bottom: 2px solid white;
     text-transform: uppercase;
     color: white;
     font-weight: 600;
     padding-left: 50px; }
+    ion-content .button span {
+      background: url("../../../img/img_spritesheet.png") no-repeat;
+      height: 100%;
+      width: 45px;
+      position: absolute;
+      left: 0; }
     ion-content .button:hover {
       color: white;
       background-color: rgba(255, 255, 255, 0.1); }
@@ -9605,7 +9611,7 @@ ion-content {
 .start-content .start-image {
   background: url("../../../img/img_start_content.png") no-repeat center/contain;
   min-height: 300px; }
-.start-content .button {
+.start-content .button span {
   background-position: -25px -100px; }
 
 .create-test-content .button {

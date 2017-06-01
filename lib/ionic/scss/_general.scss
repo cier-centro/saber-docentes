@@ -18,13 +18,20 @@ ion-content {
     line-height: 120%;
   }
   .button {
-    background: $white-button-background url('../../../img/img_spritesheet.png') no-repeat;
+    background: $white-button-background;
     border-bottom: 2px solid white;
     text-transform: uppercase;
     color: white;
     font-weight: 600;
     padding-left: 50px;
 
+    span {
+      background: url('../../../img/img_spritesheet.png') no-repeat;
+      height: 100%;
+      width: 45px;
+      position: absolute;
+      left: 0;
+    }
     &:hover {
       color: white;
       background-color: rgba(255, 255, 255, 0.1);
@@ -167,7 +174,9 @@ ion-content {
     min-height: 300px;
   }
   .button {
-    background-position: -25px -100px;
+    span {
+      background-position: -25px -100px;
+    }
   }
 }
 
