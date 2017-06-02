@@ -1,3 +1,8 @@
+/**
+ * General Styles
+ * --------------------------------------------------
+ */
+
 body * {
   font-family: 'arial';
 }
@@ -7,7 +12,7 @@ ion-content {
   -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
   -moz-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
   box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
-  margin-top: 132px !important;
+  margin-top: $main-header-height !important;
 
   .scroll {
     padding: 0 !important;
@@ -36,88 +41,6 @@ ion-content {
       color: white;
       background-color: rgba(255, 255, 255, 0.1);
     }
-  }
-
-  .item-radio {
-    &, & .item-content {
-      background: transparent;
-      border: none;
-    }
-    input {
-      & + .radio-content .item-content {
-        background: $white-button-background;
-        border-bottom: 2px solid white;
-      }
-
-      &:checked + .radio-content {
-        & {
-          height: 75px;
-          width: calc(100% - 5px);
-        }
-
-        .item-content {
-          background: $selected-option-background;
-          border: none;
-          -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
-          -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
-          box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
-        }
-      }
-    }
-    .radio-content {
-      .item-content {
-        padding: 16px 16px 16px 70px;
-        height: 70px;
-        display: flex;
-        align-items: center;
-      }
-      .radio-icon {
-        right: none;
-        visibility: visible;
-        left: 0;
-        width: 63px;
-        background: url('../../../img/img_spritesheet.png') no-repeat;
-      }
-    }
-    span {
-      color: white;
-      text-transform: uppercase;
-      font: {
-        size: 22px;
-        weight: 600;
-      }
-    }
-
-    .ion-checkmark:before {
-      content: "";
-    }
-  }
-
-  .input-text-styles {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: $input-text-color;
-  }
-
-  .item-select {
-    height: 55px !important;
-
-    select {
-      @extend .input-text-styles;
-    }
-  }
-
-  .item-input {
-    input {
-      @extend .input-text-styles;
-    }
-  }
-
-  .item-select, .item-input {
-    border: 4px solid $warning-background;
-    -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
-    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
   }
 
   @media (max-width: 767px) {
@@ -180,8 +103,22 @@ ion-content {
   }
 }
 
+.pull-right {
+  float: right;
+}
+
 .create-test-content {
-  .button {
-    background-position: -25px -100px;
+  #page-button-bar9 {
+    margin: 40px 10px 40px;
+  }
+  .manual-button {
+    span {
+      background-position: -24px -178px;
+    }
+  }
+  .random-button {
+    span {
+      background-position: -192px -178px;
+    }
   }
 }

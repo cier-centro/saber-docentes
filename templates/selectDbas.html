@@ -1,30 +1,20 @@
 <ion-view hide-nav-bar="true" id="page4" >
-
-    <ion-content padding="true">
-
-        <div class="principal-header" >
-            <div class="row">
-                <div class="col col-50" align="center">
-                    <img src="img/pruebas_saber.jpg" width=178 height=100  alt="Pruebas Saber">
-                </div>
-                <div class="col col-50">
-                    <h1>Pruebas Saber</h1>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-          <div class="item item-text-wrap">
-            <div class="row">
-              <div class="col-33">Nombre de la Prueba: {{header_data.test}}</div>
-              <div class="col-33">Asignatura: {{header_data.asignature}}</div>
-              <div class="col-33">Grado: {{header_data.level}}</div>
-            </div>
-          </div>
-        </div>
+  <div class="informative-header">
+    <div class="row row-center informative-labels">
+      <div>Nombre de la Prueba:</div>
+      <div>Asignatura:</div>
+      <div>Grado:</div>
+    </div>
+    <div class="row informative-content">
+      <div>{{header_data.test}}</div>
+      <div>{{header_data.asignature}}</div>
+      <div>{{header_data.level}}</div>
+    </div>
+  </div>
+    <ion-content padding="true">        
 
         <form id="dba_list" class="list">
-            <h4 id="page-heading1" style="color:#000000;" ng-if="dbas.length!=0">DBAS:</h4>
+            <h4 id="page-heading1" style="color:#000000;" ng-if="dbas.length!=0">LISTADO DBA</h4>
             <ion-list id="page-list2">
                 <div class="card">
                     <div class="item item-text-wrap">

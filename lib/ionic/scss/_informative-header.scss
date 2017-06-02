@@ -1,0 +1,45 @@
+/**
+ * Informative Header Styles
+ * --------------------------------------------------
+ */
+.informative-header {
+  background: $warning-background;
+  padding: 20px 10%;
+  margin-top: $main-header-height;
+
+  & + ion-content {
+    margin-top: $main-header-height + 108px !important;
+  }
+
+  .informative-labels {
+    color: $warning-text-color;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+  .informative-content {
+    div {
+      background: $informative-content-background;
+      color: white;
+      padding: 7px 5px;
+    }
+  }
+  .informative-labels, .informative-content {
+    div {
+      @include flex(0, 0, 30%);
+      max-width: 30%;
+    }
+    div:not(:first-child) {
+      margin-left: 5%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    & {
+      margin-top: 0 !important;
+    }
+
+    & + ion-content {
+      margin-top: 108px !important;
+    }
+  }
+}
