@@ -1,25 +1,34 @@
 <ion-view hide-nav-bar="true" id="page6">
+    <div class="informative-header">
+      <div class="row row-center informative-labels">
+        <div>Nombre de la Prueba:</div>
+        <div>Asignatura:</div>
+        <div>Grado:</div>
+      </div>
+      <div class="row informative-content">
+        <div>VAL?{{header_data.test}}</div>
+        <div>VAL?{{header_data.asignature}}</div>
+        <div>VAL?{{header_data.level}}</div>
+      </div>
+    </div>
     <ion-content padding="true">
-
-        <div class="principal-header" >
-            <div class="row">
-                <div class="col col-50" align="center">
-                    <img src="img/pruebas_saber.jpg" width=178 height=100  alt="Pruebas Saber">
-                </div>
-                <div class="col col-50">
-                    <h1>Pruebas Saber</h1>
-                </div>
-            </div>
-			<div class="row">
+      <!--<div class="row">
 				<div class="col-100">
-                    <a id="page-button15" class="button button-assertive  button-block" ng-click="Print()" ng-if="current_question != 0">Atrás</a>
-                </div>
-			</div>
+            <a id="page-button15" class="button button-assertive  button-block" ng-click="Print()" ng-if="current_question != 0">Atrás</a>
         </div>
-
+			</div>-->
+      <div class="select-questions-content">
+        <div class="question-counter">
+          <div class="counter-container">
+            <span></span>
+            <div class="counter-text">
+              <b>Pregunta</b>
+              {{data.numberofquestions}}/{{data.max_questions}}
+            </div>
+          </div>
+        </div>
         <form id="question_list" class="list">
-            <h3 id="page3-heading3" style="color:#000000;">Preguntas seleccionadas <span style="margin-left:5em"> {{data.numberofquestions}}/{{data.max_questions}} </span></h3>
-
+          <h4 id="page3-heading3">DBA SELECCIONADOS</h4>
             <ion-list>
                 <div ng-repeat="dba in dbas">
                     <div class="list card">
@@ -51,7 +60,6 @@
             </ion-list>
 
         </form>
-
         <div id="page-button-bar9" class="button-bar">
             <div class="row">
                 <div class="col-33">
@@ -64,6 +72,6 @@
                 </div>
             </div>
         </div>
-
+      </div>
     </ion-content>
 </ion-view>

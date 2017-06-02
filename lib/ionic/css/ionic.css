@@ -9576,15 +9576,15 @@ ion-content {
 .random-test-option .item-radio input:checked + .radio-content .radio-icon {
   background-position: -180px -11px; }
 
-.start-content, .create-test-content, .select-dbas-content {
+.start-content, .create-test-content, .select-dbas-content, .select-questions-content {
   padding: 50px 5%; }
-  .start-content h1, .create-test-content h1, .select-dbas-content h1 {
+  .start-content h1, .create-test-content h1, .select-dbas-content h1, .select-questions-content h1 {
     color: white;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 55px;
     line-height: 110%; }
-  .start-content .row:first-child, .create-test-content .row:first-child, .select-dbas-content .row:first-child {
+  .start-content .row:first-child, .create-test-content .row:first-child, .select-dbas-content .row:first-child, .select-questions-content .row:first-child {
     margin: 35px 0; }
 
 .start-content .start-image {
@@ -9627,6 +9627,31 @@ ion-content {
     font-size: 15px; }
   .checkbox-list p {
     white-space: normal; }
+
+.question-counter {
+  display: flex;
+  justify-content: flex-end; }
+  .question-counter .counter-container {
+    position: relative;
+    width: 150px;
+    height: 38px;
+    background: #bde1e3;
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px; }
+  .question-counter span {
+    background: url("../../../img/img_spritesheet.png") no-repeat;
+    height: 100%;
+    width: 45px;
+    position: absolute;
+    left: 0;
+    background-position: -25px -241px; }
+  .question-counter .counter-text {
+    color: #293053;
+    padding-left: 50px;
+    height: 100%; }
+  .question-counter b {
+    width: 100%;
+    display: block; }
 
 /**
  * Header Styles

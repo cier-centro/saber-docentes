@@ -107,7 +107,7 @@ ion-content {
   }
 }
 
-.start-content, .create-test-content, .select-dbas-content {
+.start-content, .create-test-content, .select-dbas-content, .select-questions-content {
   padding: 50px 5%;
 
   h1 {
@@ -189,5 +189,39 @@ ion-content {
 
   p {
     white-space: normal;
+  }
+}
+
+.question-counter {
+  display: flex;
+  justify-content: flex-end;
+
+  .counter-container {
+    position: relative;
+    width: 150px;
+    height: 38px;
+    background: $warning-background;
+    border-top-left-radius: 19px;
+    border-bottom-left-radius: 19px;
+  }
+
+  span {
+    background: url('../../../img/img_spritesheet.png') no-repeat;
+    height: 100%;
+    width: 45px;
+    position: absolute;
+    left: 0;
+    background-position: -25px -241px;
+  }
+
+  .counter-text {
+    color: $warning-text-color;
+    padding-left: 50px;
+    height: 100%;
+  }
+
+  b {
+    width: 100%;
+    display: block;
   }
 }
