@@ -25,9 +25,7 @@ form {
         .item-content {
           background: $selected-option-background;
           border: none;
-          -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
-          -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
-          box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.4);
+          @include shadow-properties(6px 6px 6px -3px rgba(0, 0, 0, 0.4));
         }
       }
     }
@@ -85,8 +83,6 @@ form {
 
   .item-select, .item-input {
     border: 4px solid $warning-background;
-    -webkit-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
-    box-shadow: 6px 6px 6px -3px rgba(0, 0, 0, 0.3);
+    @include shadow-properties(6px 6px 6px -3px rgba(0, 0, 0, 0.3));
   }
 }

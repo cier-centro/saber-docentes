@@ -24,12 +24,14 @@
     }
   }
   .informative-labels, .informative-content {
-    div {
-      @include flex(0, 0, 30%);
-      max-width: 30%;
+    div:first-child {
+      @include flex(0, 0, 40%);
+      max-width: 40%;
     }
     div:not(:first-child) {
       margin-left: 5%;
+      @include flex(0, 0, 25%);
+      max-width: 25%;
     }
   }
 

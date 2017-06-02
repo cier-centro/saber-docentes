@@ -2,6 +2,11 @@
  * General Styles
  * --------------------------------------------------
  */
+ @mixin shadow-properties($shadow-value) {
+   -webkit-box-shadow: $shadow-value;
+   -moz-box-shadow: $shadow-value;
+   box-shadow: $shadow-value;
+ }
 
 body * {
   font-family: 'arial';
@@ -9,9 +14,7 @@ body * {
 
 ion-content {
   background: $green-background;
-  -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
-  -moz-box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
-  box-shadow: inset 0px 76px 15px -70px rgba(0,0,0,0.4);
+  @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));
   margin-top: $main-header-height !important;
 
   .scroll {
@@ -41,6 +44,34 @@ ion-content {
       color: white;
       background-color: rgba(255, 255, 255, 0.1);
     }
+  }
+
+  h4 {
+    color: $selected-option-background;
+    background: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+    margin: 20px 0 0;
+  }
+  .item-checkbox {
+    cursor: pointer;
+    @include shadow-properties(inset 8px 77px 6px -73px rgba(0, 0, 0, 0.3));
+    border: none;
+    margin: 0;
+  }
+  .checkbox {
+    input {
+      &:checked {
+        &:before, & + .checkbox-icon:before {
+          background: $selected-option-background;
+          border-color: $selected-option-background;
+        }
+      }
+    }
+  }
+  .list {
+    padding: 0;
   }
 
   @media (max-width: 767px) {
@@ -76,7 +107,7 @@ ion-content {
   }
 }
 
-.start-content, .create-test-content {
+.start-content, .create-test-content, .select-dbas-content {
   padding: 50px 5%;
 
   h1 {
@@ -120,5 +151,43 @@ ion-content {
     span {
       background-position: -192px -178px;
     }
+  }
+}
+
+.select-dbas-content {
+  #page-button-bar9 {
+    margin: 40px 10px 40px;
+  }
+  .button {
+    span {
+      background-position: -24px -178px;
+    }
+  }
+}
+
+.checkbox-list {
+  background: $checkbox-list-background;
+  @include shadow-properties(inset 8px 77px 8px -73px rgba(0,0,0,0.3));
+
+  .dba-container {
+    padding: 15px 15px 0;
+
+    &:last-child {
+      padding: 15px;
+    }
+  }
+
+  h5 {
+    background: $selected-option-background;
+    background: #ec6745;
+    margin: 0;
+    padding: 15px 15px 15px 60px;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  p {
+    white-space: normal;
   }
 }

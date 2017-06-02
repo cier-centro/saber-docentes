@@ -11,25 +11,27 @@
       <div>{{header_data.level}}</div>
     </div>
   </div>
-    <ion-content padding="true">        
-
+    <ion-content padding="true">
+      <div class="select-dbas-content">
         <form id="dba_list" class="list">
-            <h4 id="page-heading1" style="color:#000000;" ng-if="dbas.length!=0">LISTADO DBA</h4>
+            <h4 id="page-heading1" ng-if="dbas.length!=0">LISTADO DBA</h4>
             <ion-list id="page-list2">
-                <div class="card">
-                    <div class="item item-text-wrap">
-                        <ion-checkbox ng-repeat="(key, value) in dbas" name="{{value.id}}" >DBA <b>{{value.cod}}</b>: <p style="margin-left:1em" align="justify">{{value.name}}</p></ion-checkbox>
-                    </div>
+                <div class="checkbox-list">
+                  <div class="dba-container" ng-repeat="(key, value) in dbas">
+                    <h5>DBA {{value.cod}}:</h5>
+                    <ion-checkbox name="{{value.id}}" >
+                      <p style="margin-left:1em" align="justify">{{value.name}}
+                      </p>
+                    </ion-checkbox>
+                  </div>
                 </div>
             </ion-list>
         </form>
-
         <div id="page-button-bar9" class="pull-right">
-            <div class="row">
-                <div class="col col-100">
-                    <a id="page-button12" class="button button-positive" ng-click="saveSelectedDbas()">Seleccionar Preguntas</a>
-                </div>
-            </div>
+          <div>
+              <button id="page-button12" class="button" ng-click="saveSelectedDbas()"><span></span>Seleccionar Preguntas</button>
+          </div>
         </div>
+      </div>
     </ion-content>
 </ion-view>
