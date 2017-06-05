@@ -54,10 +54,10 @@ ion-content {
     font-weight: 600;
     margin: 20px 0 0;
   }
-  .item-checkbox {
+  .item-checkbox, ion-item {
     cursor: pointer;
     @include shadow-properties(inset 8px 77px 6px -73px rgba(0, 0, 0, 0.3));
-    border: none;
+    border: none !important;
     margin: 0;
   }
   .checkbox {
@@ -179,7 +179,6 @@ ion-content {
 
   h5 {
     background: $selected-option-background;
-    background: #ec6745;
     margin: 0;
     padding: 15px 15px 15px 60px;
     color: white;
@@ -189,6 +188,85 @@ ion-content {
 
   p {
     white-space: normal;
+  }
+
+  .dba-title {
+    .icon {
+      height: 35px;
+      width: 35px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: $informative-content-background;
+      border-radius: 50%;
+      color: white;
+      margin: 10px;
+      @include shadow-properties(2px 2px 2px -1px rgba(0, 0, 0, 0.4));
+    }
+  }
+}
+
+.select-questions-content {
+  .dba-container {
+    /*display: flex;*/
+  }
+  .dba-title {
+    .item {
+      margin: 0;
+      background: white !important;
+
+      p {
+        display: inline-flex;
+        margin: 10px 50px 10px 5px !important;
+        font-size: 17px;
+        font-weight: 600;
+        width: calc(100% - 80px);
+      }
+    }
+  }
+
+  .row {
+    padding: 0;
+
+    &:first-child {
+      margin: 0 !important;
+    }
+
+    & + .row {
+      margin-top: 0;
+    }
+  }
+
+  .col {
+    padding: 0;
+  }
+
+  .questions-list {
+    padding: 0 15px;
+    background: white;
+
+    &.opened-list {
+      .question-item {
+      border-bottom: 1px solid $question-list-separator;
+      }
+
+      .more-info-button-container {
+        height: 40px;
+      }
+    }
+    .question-item {
+      label {
+        @include shadow-properties(none);
+        padding: 20px 16px;
+      }
+    }
+    .more-info-button-container {
+      border-radius: 50%;
+      background: #293053;
+      padding: 0;
+      @include flex(0, 0, 40px);
+      max-width: 40px;
+    }
   }
 }
 
