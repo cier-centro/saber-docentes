@@ -7,6 +7,7 @@ function ($scope, $stateParams, $http, $state, $ionicPopup, $ionicModal, $ionicS
 
   $scope.dbas = [];
   $scope.data = {"max_questions": max_questions, "numberofquestions": 0}
+  $scope.header_data = {test:test_name,asignature:selected_asignare,level:selected_level}
   $scope.getQuesitonsData = function () {
     $scope.data.max_questions = max_questions;
     var url = "data/questions.json";

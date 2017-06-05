@@ -6,9 +6,9 @@
         <div>Grado:</div>
       </div>
       <div class="row informative-content">
-        <div>VAL?{{header_data.test}}</div>
-        <div>VAL?{{header_data.asignature}}</div>
-        <div>VAL?{{header_data.level}}</div>
+        <div>{{header_data.test}}</div>
+        <div>{{header_data.asignature}}</div>
+        <div>{{header_data.level}}</div>
       </div>
     </div>
     <ion-content padding="true">
@@ -30,18 +30,19 @@
         <form id="question_list" class="list">
           <h4 id="page3-heading3">DBA SELECCIONADOS</h4>
             <ion-list>
-                <div ng-repeat="dba in dbas">
-                    <div class="list card">
-                        <div class="item item-body">
-                            <ion-item class="item-stable"
-                                      ng-click="toggleGroup(dba)"
-                                      ng-class="{active: isGroupShown(dba)}">
-                                <i class="icon" ng-class="isGroupShown(dba) ? 'ion-minus' : 'ion-plus'"></i>
-                                &nbsp;
-                                DBA <b>{{dba.id_name}}</b>: <p style="margin-left:2.5em" align="justify"> {{dba.name}} </p>
-                            </ion-item>
-                        </div>
-                    </div>
+              <div class="checkbox-list">
+                <div class="dba-container" ng-repeat="dba in dbas">
+                  <div class="">
+                      <div class="">
+                          <ion-item class=""
+                                    ng-click="toggleGroup(dba)"
+                                    ng-class="{active: isGroupShown(dba)}">
+                              <i class="icon" ng-class="isGroupShown(dba) ? 'ion-minus' : 'ion-plus'"></i>
+                              &nbsp;
+                              DBA <b>{{dba.id_name}}</b>: <p style="margin-left:2.5em" align="justify"> {{dba.name}} </p>
+                          </ion-item>
+                      </div>
+                  </div>
 
                     <div class="row" ng-repeat="question in dba.questions">
                         <div class="col-90">
@@ -56,6 +57,7 @@
                             <a id="button_{{question.id}}" class="button button-royal" ng-click="showDetail($event,question)" ng-show="isGroupShown(dba)" style="width:100%"><i class="icon" ng-class="'ion-eye'"></i></a>
                         </div>
                     </div>
+                  </div>
                 </div>
             </ion-list>
 
