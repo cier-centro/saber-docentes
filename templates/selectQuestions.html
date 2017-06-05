@@ -32,33 +32,38 @@
             <ion-list>
               <div class="checkbox-list">
                 <div class="dba-container" ng-repeat="dba in dbas">
-                  <div class="">
-                      <div class="">
-                          <ion-item class=""
+                  <div class="row dba-title">
+                      <div class="col">
+                          <h5>DBA {{dba.id_name}}</h5>
+                          <ion-item class="row row-center"
                                     ng-click="toggleGroup(dba)"
                                     ng-class="{active: isGroupShown(dba)}">
                               <i class="icon" ng-class="isGroupShown(dba) ? 'ion-minus' : 'ion-plus'"></i>
-                              &nbsp;
-                              DBA <b>{{dba.id_name}}</b>: <p style="margin-left:2.5em" align="justify"> {{dba.name}} </p>
+                              <p style="margin-left:2.5em" align="justify"> {{dba.name}} </p>
                           </ion-item>
                       </div>
                   </div>
+                  <div class="row">
+                    <div class="col questions-list" ng-class="isGroupShown(dba) ? 'opened-list' : 'closed-list'">
+                      <div class="row question-item" ng-repeat="question in dba.questions">
+                          <div class="col">
+                              <ion-checkbox class="item-accordion"
+                                            name="{{question.id}}"
+                                            ng-click="setCounter($event)"
+                                            ng-show="isGroupShown(dba)"><p style="margin-left:2.5em"> {{question.header_question}}</p>
 
-                    <div class="row" ng-repeat="question in dba.questions">
-                        <div class="col-90">
-                            <ion-checkbox class="item-accordion"
-                                          name="{{question.id}}"
-                                          ng-click="setCounter($event)"
-                                          ng-show="isGroupShown(dba)"><p style="margin-left:2.5em"> {{question.header_question}}</p>
-
-                            </ion-checkbox>
-                        </div>
-                        <div class="col-10" style="vertical-align:central">
-                            <a id="button_{{question.id}}" class="button button-royal" ng-click="showDetail($event,question)" ng-show="isGroupShown(dba)" style="width:100%"><i class="icon" ng-class="'ion-eye'"></i></a>
-                        </div>
+                              </ion-checkbox>
+                          </div>
+                          <div class="more-info-button-container" style="vertical-align:central">
+                              <a id="button_{{question.id}}" class="button" ng-click="showDetail($event,question)" ng-show="isGroupShown(dba)" style="width:100%">
+                                <i class="icon" ng-class="'ion-eye'"></i>
+                              </a>
+                          </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
             </ion-list>
 
         </form>
