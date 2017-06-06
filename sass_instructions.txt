@@ -1,5 +1,5 @@
 sudo rm -r edu-unica/
 
-estando en C:\xampp\htdocs\electron-quick-start\node_modules\electron\dist\resources\app
+estando en -> cd C:\xampp\htdocs\electron-quick-start\node_modules\electron\dist\resources\app
 ejecutar -> sass --watch lib/ionic/scss/ionic.scss:lib/ionic/scss/ionic.css
 o ejecutar -> sass --watch lib/ionic/scss/ionic.scss:lib/ionic/css/ionic.css
