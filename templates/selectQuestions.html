@@ -68,14 +68,20 @@
 
         </form>
         <div id="page-button-bar9" class="button-bar">
-            <div class="row">
-                <div class="col-33">
-                    <a id="page-button11" class="button button-assertive  button-block" ng-click="Return()" ng-if="current_question != 0">Atrás</a>
+            <div class="row responsive-md button-container">
+                <div class="col">
+                    <a id="page-button11" class="button back-button button-block" ng-click="Return()" ng-if="current_question != 0">
+                      <span></span>
+                      Atrás
+                    </a>
                 </div>
-                <div class="col-33">
+                <div class="col">
                 </div>
-                <div class="col-33">
-                    <a id="page-button11" class="button button-positive  button-block" ng-click="showTest()">Visualizar Prueba</a>
+                <div class="col">
+                    <a id="page-button11" class="button see-test-button button-block" ng-click="showTest()">
+                      <span></span>
+                      Visualizar Prueba
+                    </a>
                 </div>
             </div>
         </div>

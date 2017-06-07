@@ -9543,6 +9543,8 @@ ion-content {
     ion-content .button:hover {
       color: white;
       background-color: rgba(255, 255, 255, 0.1); }
+  ion-content .back-button span {
+    background-position: -433px -169px; }
   ion-content h4 {
     color: #ec6745;
     background: white;
@@ -9694,6 +9696,23 @@ ion-content {
       background: transparent; }
     .select-questions-content .questions-list .more-info-button-container:hover a {
       background: rgba(255, 255, 255, 0.2); }
+@media (min-width: 768px) {
+  .select-questions-content .button-container .col:first-child, .select-questions-content .button-container .col:last-child {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 40%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 40%;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%; }
+  .select-questions-content .button-container .col:nth-child(2) {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 20%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 20%; } }
 
 .question-counter {
   display: flex;
@@ -9948,7 +9967,7 @@ form .item-select, form .item-input {
  * --------------------------------------------------
  */
 .modal-backdrop-bg {
-  opacity: 0.8;
+  opacity: 0.8 !important;
   background-color: #293053; }
 
 ion-modal-view h4 {
