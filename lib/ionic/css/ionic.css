@@ -9662,7 +9662,7 @@ ion-content {
 .select-questions-content .questions-list {
   padding: 0 15px;
   background: white; }
-  .select-questions-content .questions-list.opened-list .question-item {
+  .select-questions-content .questions-list.opened-list .question-item:not(:last-child) {
     border-bottom: 1px solid #908f90; }
   .select-questions-content .questions-list.opened-list .more-info-button-container {
     height: 40px; }
@@ -9670,7 +9670,9 @@ ion-content {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    padding: 20px 16px; }
+    padding: 20px 10px; }
+  .select-questions-content .questions-list .question-item .checkbox {
+    padding: 7px 0; }
   .select-questions-content .questions-list .more-info-button-container {
     border-radius: 50%;
     background: #293053;
@@ -9682,6 +9684,16 @@ ion-content {
     -ms-flex: 0 0 40px;
     flex: 0 0 40px;
     max-width: 40px; }
+    .select-questions-content .questions-list .more-info-button-container a {
+      padding: 0;
+      display: block;
+      min-height: 40px;
+      height: 40px;
+      min-width: 100%;
+      border: none;
+      background: transparent; }
+    .select-questions-content .questions-list .more-info-button-container:hover a {
+      background: rgba(255, 255, 255, 0.2); }
 
 .question-counter {
   display: flex;
@@ -9930,5 +9942,65 @@ form .item-select, form .item-input {
       margin-top: 0 !important; }
     .informative-header + ion-content {
       margin-top: 108px !important; } }
+
+/**
+ * Modal Styles
+ * --------------------------------------------------
+ */
+.modal-backdrop-bg {
+  opacity: 0.8;
+  background-color: #293053; }
+
+ion-modal-view h4 {
+  text-align: left !important; }
+ion-modal-view ion-header-bar {
+  background: #ec6745 !important;
+  border: none !important; }
+  ion-modal-view ion-header-bar h4 {
+    width: calc(100% - 50px);
+    color: white;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+    padding: 0 15px;
+    text-transform: uppercase;
+    left: 0 !important; }
+  ion-modal-view ion-header-bar button {
+    color: white !important; }
+    ion-modal-view ion-header-bar button:before {
+      border: 1px solid white;
+      font-size: 24px !important;
+      padding: 0 4px !important;
+      height: 28px;
+      line-height: 110% !important; }
+ion-modal-view ion-content {
+  margin-top: 0 !important;
+  background: white;
+  padding: 30px !important; }
+  ion-modal-view ion-content h4 {
+    padding: 10px 0; }
+  ion-modal-view ion-content .header_question_container .header_text, ion-modal-view ion-content .header_question_container .header_text * {
+    font-size: 16px; }
+  ion-modal-view ion-content .question-option {
+    border-bottom: 1px solid #908f90; }
+    ion-modal-view ion-content .question-option .row {
+      min-height: 50px; }
+    ion-modal-view ion-content .question-option .bullet {
+      height: 8px;
+      width: 9px;
+      display: inline-flex;
+      background: #b1afaf;
+      border-radius: 50%;
+      margin: 0 15px; }
+  ion-modal-view ion-content .cancel-modal-button {
+    background: rgba(189, 225, 227, 0.1);
+    border-bottom-color: #2CB4AD;
+    color: #e05032;
+    margin-top: 25px; }
+    ion-modal-view ion-content .cancel-modal-button:hover {
+      color: #e05032;
+      background: rgba(189, 225, 227, 0.4); }
+    ion-modal-view ion-content .cancel-modal-button span {
+      background-position: -434px -298px; }
 
 /*# sourceMappingURL=ionic.css.map */

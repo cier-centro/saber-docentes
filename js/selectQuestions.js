@@ -137,9 +137,8 @@ $scope.showDetail = function ($event, question) {
 
   var template = '<ion-modal-view><ion-header-bar><h4 class="title">Pregunta {{questionToDetail.cod_question}}</h4><div class="buttons"><button class="button button-icon ion-close" ng-click="popover.hide()"></button></div></ion-header-bar><ion-content>'
 
-  template += '<h4><p style="margin-left:0.5em">Encabezado:</p></h4>'
-  template += '<div class="card">'
-  template += '<div class="item item-text-wrap" align="justify">'
+  template += '<div class="header_question_container">'
+  template += '<div class="header_text" align="justify">'
   template += '<h2>{{questionToDetail.header_question}}</h2>'
   template += '</div>'
   template += '</div>'
@@ -169,14 +168,16 @@ $scope.showDetail = function ($event, question) {
     template += '</div>'
   }
 
-  template += '<h4><p style="margin-left:0.5em">Respuestas:</p></h4>'
-  template += '<div class="card">'
-  template += '<div ng-repeat="answer in questionToDetail.answers" class="item item-text-wrap" align="justify">'
-  template += '<b>({{getLetter($index)}}).</b> {{answer.header_answer}}'
+  template += '<h4>Respuestas:</h4>'
+  template += '<div class="question-options">'
+  template += '<div ng-repeat="answer in questionToDetail.answers" class="question-option" align="justify">'
+  template += '<div class="row row-center">'
+  template += '<span class="bullet"></span>{{answer.header_answer}}'
+  template += '</div>'
   template += '</div>'
   template += '</div>'
   template += '<div class="buttons" style="text-align: right;">'
-  template += '<p style="margin-right:1em"><button class="button button-assertive" ng-click="popover.hide()">Cancelar</button></p>'
+  template += '<button class="button cancel-modal-button" ng-click="popover.hide()"><span></span>Cancelar</button>'
   template += '</div>'
   template += '</ion-content></ion-modal-view>';
   $scope.popover = $ionicModal.fromTemplate(template, {

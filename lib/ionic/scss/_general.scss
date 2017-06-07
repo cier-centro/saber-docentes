@@ -246,7 +246,7 @@ ion-content {
     background: white;
 
     &.opened-list {
-      .question-item {
+      .question-item:not(:last-child) {
       border-bottom: 1px solid $question-list-separator;
       }
 
@@ -257,7 +257,10 @@ ion-content {
     .question-item {
       label {
         @include shadow-properties(none);
-        padding: 20px 16px;
+        padding: 20px 10px;
+      }
+      .checkbox {
+        padding: 7px 0;
       }
     }
     .more-info-button-container {
@@ -266,6 +269,22 @@ ion-content {
       padding: 0;
       @include flex(0, 0, 40px);
       max-width: 40px;
+
+      a {
+        padding: 0;
+        display: block;
+        min-height: 40px;
+        height: 40px;
+        min-width: 100%;
+        border: none;
+        background: transparent;
+      }
+      &:hover
+      {
+        a {
+          background: $white-button-background;
+        }
+      }
     }
   }
 }
