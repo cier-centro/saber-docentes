@@ -1,40 +1,41 @@
 <ion-view hide-nav-bar="true" id="page6">
+    <div class="informative-header">
+      <div class="row row-center informative-labels">
+        <div>Nombre de la Prueba:</div>
+        <div>Asignatura:</div>
+        <div>Grado:</div>
+      </div>
+      <div class="row informative-content">
+        <div>{{header_data.test}}</div>
+        <div>{{header_data.asignature}}</div>
+        <div>{{header_data.level}}</div>
+      </div>
+    </div>
     <ion-content padding="true">
-
-        <div class="principal-header" >
-            <div class="row">
-                <div class="col col-50" align="center">
-                    <img src="img/pruebas_saber.jpg" width=178 height=100  alt="Pruebas Saber">
+      <div class="show-test-content">
+        <h4>HOJA DE RESULTADOS</h4>
+        <div class="row question-info-container" ng-repeat="question in questions track by $index">
+          <div class="col">
+            <h5><b>PREGUNTA {{$index+1}}:</b> ({{question.question.cod_question}})</h5>
+            <div class="question-info">
+              <p>{{question.question.header_question}}</p>
+              <div class="item item-text-wrap">
+                <div id="mathContainer" ng-if="question.question.type=='2'">
+                    {{question.question.file}}
                 </div>
-                <div class="col col-50">
-                    <h1>Pruebas Saber</h1>
+                <div id="mathContainer" ng-if="question.question.type=='1'">
+                    <canvas id="pdf_viewer_{{$index}}" style="width:100%"></canvas>
                 </div>
-            </div>
-        </div>
-
-        <h3>Nombre: {{name}}</h3>
-        <h3>Hoja de Resultados:</h3>
-
-
-        <div class="row" ng-repeat="question in questions track by $index">
-          <div class="card">
-            <div class="item item-divider">
-              Pregunta número {{$index+1}} ({{question.question.cod_question}})
-            </div>
-            <p>{{question.question.header_question}}</p>
-            <div class="item item-text-wrap">
-              <div id="mathContainer" ng-if="question.question.type=='2'">
-                  {{question.question.file}}
+                <div id="mathContainer" ng-if="question.question.type=='3'" >
+                    <img src="contents/{{question.question.file}}" class="row" >
+                </div>
               </div>
-              <div id="mathContainer" ng-if="question.question.type=='1'">
-                  <canvas id="pdf_viewer_{{$index}}" style="width:100%"></canvas>
-              </div>
-              <div id="mathContainer" ng-if="question.question.type=='3'" >
-                  <img src="contents/{{question.question.file}}" class="row" >
-              </div>
-              <div class="list card">
-                <div ng-repeat="option in question.question.answers track by $index"  class="item">
-                  {{option.header_answer}}
+              <h4>Respuestas:</h4>
+              <div>
+                <div ng-repeat="option in question.question.answers track by $index"  class="question-option">
+                  <div class="row row-center">
+                    <span class="bullet"></span>{{option.header_answer}}
+                  </div>
                 </div>
               </div>
             </div>
@@ -60,13 +61,42 @@
             </div>
         </div>-->
 
-
         <div class="button-bar">
-          <a class="button button-balanced" ng-click="Print()">Descargar PDF</a>
-          <a class="button button-assertive" ng-click="saveQuestionary()">Archivo plano</a>
-          <a class="button button-positive" ng-click="answerSheet()">Respuestas</a>
-          <a class="button button-positive" ng-click="resetvariablesAndGoBack()">Terminar</a>
+          <div class="row responsive-sm">
+              <div class="col">
+                  <div class="row responsive-lg">
+                      <div class="col">
+                        <a class="button button-block" ng-click="Print()">
+                          <span></span>
+                          Descargar PDF
+                        </a>
+                      </div>
+                      <div class="col">
+                        <a class="button button-block" ng-click="saveQuestionary()">
+                          <span></span>
+                          Archivo plano
+                        </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="row responsive-lg">
+                    <div class="col">
+                      <a class="button button-block" ng-click="answerSheet()">
+                        <span></span>
+                        Respuestas
+                      </a>
+                    </div>
+                    <div class="col">
+                      <a class="button button-block finish-button" ng-click="resetvariablesAndGoBack()">
+                        <span></span>
+                        Terminar
+                      </a>
+                    </div>
+                  </div>
+              </div>
+          </div>
         </div>
-
+      </div>
     </ion-content>
 </ion-view>

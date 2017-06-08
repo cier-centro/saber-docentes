@@ -1,5 +1,5 @@
 /**
- * General Styles
+ * Buttons Styles
  * --------------------------------------------------
  */
 
@@ -32,6 +32,11 @@ ion-content {
   .see-test-button {
     span {
       background-position: -498px -20px;
+    }
+  }
+  .finish-button {
+    span {
+      background-position: -498px -168px;
     }
   }
   .load-reading-button {

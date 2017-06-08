@@ -7,6 +7,22 @@
   background-color: $warning-text-color;
 }
 
+.question-option {
+  border-bottom: 1px solid $question-list-separator;
+
+  .row {
+    min-height: 50px;
+  }
+  .bullet {
+    height: 8px;
+    width: 9px;
+    display: inline-flex;
+    background: $bullet-background;
+    border-radius: 50%;
+    margin: 0 15px;
+  }
+}
+
 ion-modal-view {
   h4 {
     text-align: left !important;
@@ -50,21 +66,6 @@ ion-modal-view {
         &, & * {
           font-size: 16px;
         }
-      }
-    }
-    .question-option {
-      border-bottom: 1px solid $question-list-separator;
-
-      .row {
-        min-height: 50px;
-      }
-      .bullet {
-        height: 8px;
-        width: 9px;
-        display: inline-flex;
-        background: $bullet-background;
-        border-radius: 50%;
-        margin: 0 15px;
       }
     }
     .cancel-modal-button {

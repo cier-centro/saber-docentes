@@ -1,5 +1,6 @@
 cont_angular.controller('showTestCtrl', ['$scope', '$stateParams', '$ionicPopup', '$state', '$ionicModal', '$ionicScrollDelegate',
     function ($scope, $stateParams, $ionicPopup, $state, $ionicModal, $ionicScrollDelegate) {
+        $scope.header_data = {test:test_name,asignature:selected_asignare,level:selected_level}
         if (selected_questions.length == 0) {
             $state.go("dbasselection");
         }

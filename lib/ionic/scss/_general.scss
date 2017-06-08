@@ -60,7 +60,7 @@ ion-content {
   }
 }
 
-.start-content, .create-test-content, .select-dbas-content, .select-questions-content {
+.start-content, .create-test-content, .select-dbas-content, .select-questions-content, .show-test-content {
   padding: 50px 5%;
 
   h1 {
@@ -98,6 +98,13 @@ ion-content {
   }
 }
 
+.dba-title-style {
+  background: $selected-option-background;
+  margin: 0;
+  color: white;
+  font-size: 15px;
+}
+
 .checkbox-list {
   background: $checkbox-list-background;
   @include shadow-properties(inset 8px 77px 8px -73px rgba(0,0,0,0.3));
@@ -111,12 +118,9 @@ ion-content {
   }
 
   h5 {
-    background: $selected-option-background;
-    margin: 0;
     padding: 15px 15px 15px 60px;
-    color: white;
     font-weight: 600;
-    font-size: 15px;
+    @extend .dba-title-style;
   }
 
   p {
@@ -223,5 +227,100 @@ ion-content {
   b {
     width: 100%;
     display: block;
+  }
+}
+
+.show-test-content {
+  .row {
+    padding: 0;
+
+    & > .col {
+      padding: 0;
+    }
+    &:first-child {
+      margin: 0 !important;
+    }
+  }
+  .question-info-container {
+    margin: 10px 0;
+    background: white;
+
+    .question-info {
+      padding: 30px !important;
+      @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));
+
+      .question-option:last-child {
+        border: none;
+      }
+    }
+
+    h4 {
+      text-align: left;
+      padding: 10px 0;
+      font-size: 15px;
+    }
+  }
+  h5 {
+    padding: 7px 15px;
+    @extend .dba-title-style;
+  }
+  p {
+    font-size: 16px;
+  }
+  .button-bar {
+    .col {
+      @media (min-width: 1024px) {
+        &:first-child {
+          .responsive-lg {
+            .col {
+              &:first-child {
+                padding-right: 2.5%;
+              }
+              &:last-child {
+                padding: 0 2.5%;
+              }
+            }
+          }
+        }
+        &:last-child {
+          .responsive-lg {
+            .col {
+              &:first-child {
+                padding: 0 2.5%;
+              }
+              &:last-child {
+                padding-left: 2.5%;
+              }
+            }
+          }
+        }
+      }
+      @media (min-width: 568px) and (max-width: 1023px) {
+        &:first-child {
+          .responsive-lg {
+            .col {
+              &:first-child {
+                padding-right: 2.5%;
+              }
+              &:last-child {
+                padding-right: 2.5%;
+              }
+            }
+          }
+        }
+        &:last-child {
+          .responsive-lg {
+            .col {
+              &:first-child {
+                padding-left: 2.5%;
+              }
+              &:last-child {
+                padding-left: 2.5%;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
