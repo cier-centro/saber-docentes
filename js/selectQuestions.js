@@ -154,7 +154,7 @@ $scope.showDetail = function ($event, question) {
       template += '{{questionToDetail.file}}'
     } else if ($scope.questionToDetail.type == '1') {
       template += '<div>'
-      template += '<button id="load" class="button button-balanced" ng-click="loadPDFAng(questionToDetail.file)">Cargar lectura</button>'
+      template += '<button id="load" class="button button-block load-reading-button" ng-click="loadPDFAng(questionToDetail.file)"><span></span>Cargar lectura</button>'
       template += '<button id="prev" class="button button-balanced" style="display:none">Pagina Anterior</button>'
       template += '<button id="next" class="button button-balanced" style="display:none">Pagina Siguiente</button>'
       template += '<span id="detail" style="display:none">Pagina: <span id="page_num"></span> / <span id="page_count"></span></span>'

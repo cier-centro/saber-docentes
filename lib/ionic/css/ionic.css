@@ -9545,6 +9545,16 @@ ion-content {
       background-color: rgba(255, 255, 255, 0.1); }
   ion-content .back-button span {
     background-position: -433px -169px; }
+  ion-content .see-test-button span {
+    background-position: -498px -20px; }
+  ion-content .load-reading-button {
+    background: #ec6745; }
+    ion-content .load-reading-button:hover {
+      background-color: rgba(236, 103, 69, 0.8); }
+    ion-content .load-reading-button span {
+      background-position: -498px -66px; }
+  ion-content #prev, ion-content #next, ion-content #detail {
+    display: none !important; }
   ion-content h4 {
     color: #ec6745;
     background: white;
@@ -9677,7 +9687,6 @@ ion-content {
     padding: 7px 0; }
   .select-questions-content .questions-list .more-info-button-container {
     border-radius: 50%;
-    background: #293053;
     padding: 0;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 40px;
@@ -9693,9 +9702,13 @@ ion-content {
       height: 40px;
       min-width: 100%;
       border: none;
-      background: transparent; }
+      background: transparent;
+      color: #293053; }
+      .select-questions-content .questions-list .more-info-button-container a i:before {
+        margin-top: 0 !important;
+        font-size: 36px; }
     .select-questions-content .questions-list .more-info-button-container:hover a {
-      background: rgba(255, 255, 255, 0.2); }
+      color: #ec6745; }
 @media (min-width: 768px) {
   .select-questions-content .button-container .col:first-child, .select-questions-content .button-container .col:last-child {
     -webkit-box-flex: 0;

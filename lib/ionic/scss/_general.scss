@@ -50,6 +50,24 @@ ion-content {
       background-position: -433px -169px;
     }
   }
+  .see-test-button {
+    span {
+      background-position: -498px -20px;
+    }
+  }
+  .load-reading-button {
+    background: $selected-option-background;
+
+    &:hover {
+      background-color: rgba($selected-option-background, 0.8);
+    }
+    span {
+      background-position: -498px -66px;
+    }
+  }
+  #prev, #next, #detail {
+    display: none !important;
+  }
   h4 {
     color: $selected-option-background;
     background: white;
@@ -269,7 +287,6 @@ ion-content {
     }
     .more-info-button-container {
       border-radius: 50%;
-      background: #293053;
       padding: 0;
       @include flex(0, 0, 40px);
       max-width: 40px;
@@ -282,11 +299,19 @@ ion-content {
         min-width: 100%;
         border: none;
         background: transparent;
+        color: $warning-text-color;
+
+        i{
+          &:before {
+            margin-top: 0 !important;
+            font-size: 36px;
+          }
+        }
       }
       &:hover
       {
         a {
-          background: $white-button-background;
+          color: $selected-option-background;
         }
       }
     }
