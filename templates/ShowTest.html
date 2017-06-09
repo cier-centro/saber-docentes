@@ -61,41 +61,43 @@
             </div>
         </div>-->
 
-        <div class="button-bar">
-          <div class="row responsive-sm">
+        <div class="button-container">
+            <div class="row responsive-md">
+                <div class="col">
+                  <a class="button button-block load-button" ng-click="Print()">
+                    <span></span>
+                    Descargar PDF
+                  </a>
+                </div>
+                <div class="col">
+                  <a class="button button-block load-button" ng-click="saveQuestionary()">
+                    <span></span>
+                    Descargar Archivo plano
+                  </a>
+                </div>
+                <div class="col">
+                  <a class="button button-block load-button" ng-click="answerSheet()">
+                    <span></span>
+                    Descargar Respuestas
+                  </a>
+                </div>
+            </div>
+            <div class="row row responsive-md">
               <div class="col">
-                  <div class="row responsive-lg">
-                      <div class="col">
-                        <a class="button button-block load-button" ng-click="Print()">
-                          <span></span>
-                          Descargar PDF
-                        </a>
-                      </div>
-                      <div class="col">
-                        <a class="button button-block load-button" ng-click="saveQuestionary()">
-                          <span></span>
-                          Descargar Archivo plano
-                        </a>
-                      </div>
-                  </div>
+                <a class="button button-block back-button" ng-click="goBack()">
+                  <span></span>
+                  Atrás
+                </a>
               </div>
               <div class="col">
-                  <div class="row responsive-lg">
-                    <div class="col">
-                      <a class="button button-block load-button" ng-click="answerSheet()">
-                        <span></span>
-                        Descargar Respuestas
-                      </a>
-                    </div>
-                    <div class="col">
-                      <a class="button button-block finish-button" ng-click="resetvariablesAndGoBack()">
-                        <span></span>
-                        Terminar
-                      </a>
-                    </div>
-                  </div>
               </div>
-          </div>
+              <div class="col">
+                <a class="button button-block finish-button" ng-click="resetvariablesAndGoBack()">
+                  <span></span>
+                  Terminar
+                </a>
+              </div>
+            </div>
         </div>
       </div>
     </ion-content>

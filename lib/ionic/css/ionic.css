@@ -9644,10 +9644,7 @@ div[class*="-page-content"] {
   z-index: 1;
   position: absolute;
   width: 100%;
-  padding: 15px 5%;
-  /*padding: 20px 5%;
-  background: $green-background;
-  @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));*/ }
+  padding: 15px 5%; }
   .question-counter .counter-container {
     position: relative;
     width: 150px;
@@ -9670,26 +9667,63 @@ div[class*="-page-content"] {
     width: 100%;
     display: block; }
 
-@media (min-width: 1024px) {
-  .show-test-page-content .button-bar .col:first-child .responsive-lg .col:first-child {
-    padding-right: 2.5%; }
-  .show-test-page-content .button-bar .col:first-child .responsive-lg .col:last-child {
-    padding: 0 2.5%; }
-  .show-test-page-content .button-bar .col:last-child .responsive-lg .col:first-child {
-    padding: 0 2.5%; }
-  .show-test-page-content .button-bar .col:last-child .responsive-lg .col:last-child {
-    padding-left: 2.5%; } }
-@media (min-width: 568px) and (max-width: 1023px) {
-  .show-test-page-content .button-bar .col:first-child .responsive-lg .col:first-child {
-    padding-right: 2.5%; }
-  .show-test-page-content .button-bar .col:first-child .responsive-lg .col:last-child {
-    padding-right: 2.5%; }
-  .show-test-page-content .button-bar .col:last-child .responsive-lg .col:first-child {
-    padding-left: 2.5%; }
-  .show-test-page-content .button-bar .col:last-child .responsive-lg .col:last-child {
-    padding-left: 2.5%; } }
-.show-test-page-content .button-bar a {
-  text-align: left; }
+.show-test-page-content .button-container {
+  /*.col {
+    @media (min-width: 1024px) {
+      &:first-child {
+        .responsive-lg {
+          .col {
+            &:first-child {
+              padding-right: 2.5%;
+            }
+            &:last-child {
+              padding: 0 2.5%;
+            }
+          }
+        }
+      }
+      &:last-child {
+        .responsive-lg {
+          .col {
+            &:first-child {
+              padding: 0 2.5%;
+            }
+            &:last-child {
+              padding-left: 2.5%;
+            }
+          }
+        }
+      }
+    }
+    @media (min-width: 568px) and (max-width: 1023px) {
+      &:first-child {
+        .responsive-lg {
+          .col {
+            &:first-child {
+              padding-right: 2.5%;
+            }
+            &:last-child {
+              padding-right: 2.5%;
+            }
+          }
+        }
+      }
+      &:last-child {
+        .responsive-lg {
+          .col {
+            &:first-child {
+              padding-left: 2.5%;
+            }
+            &:last-child {
+              padding-left: 2.5%;
+            }
+          }
+        }
+      }
+    }
+  }*/ }
+  .show-test-page-content .button-container a {
+    text-align: left; }
 
 .show-test-page-content .row, .show-answers-page-content .row {
   padding: 0; }
@@ -9715,16 +9749,16 @@ div[class*="-page-content"] {
     font-size: 15px; }
 .show-test-page-content p, .show-answers-page-content p {
   font-size: 16px; }
-.show-test-page-content .button-bar a, .show-answers-page-content .button-bar a {
+.show-test-page-content .button-container a, .show-answers-page-content .button-container a {
   line-height: 100%;
   display: flex;
   align-items: center; }
-  .show-test-page-content .button-bar a span, .show-answers-page-content .button-bar a span {
+  .show-test-page-content .button-container a span, .show-answers-page-content .button-container a span {
     height: 45px; }
 
 .show-answers-page-content .question-option {
   border: none; }
-.show-answers-page-content .button-bar a {
+.show-answers-page-content .button-container a {
   justify-content: center; }
 
 /**

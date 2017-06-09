@@ -203,9 +203,6 @@ div[class*="-page-content"] {
   position: absolute;
   width: 100%;
   padding: 15px 5%;
-  /*padding: 20px 5%;
-  background: $green-background;
-  @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));*/
 
   .counter-container {
     position: relative;
@@ -238,8 +235,8 @@ div[class*="-page-content"] {
 }
 
 .show-test-page-content {
-  .button-bar {
-    .col {
+  .button-container {
+    /*.col {
       @media (min-width: 1024px) {
         &:first-child {
           .responsive-lg {
@@ -292,7 +289,7 @@ div[class*="-page-content"] {
           }
         }
       }
-    }
+    }*/
     a {
       text-align: left;
     }
@@ -325,7 +322,6 @@ div[class*="-page-content"] {
         border: none;
       }
     }
-
     h4 {
       text-align: left;
       padding: 10px 0;
@@ -335,7 +331,7 @@ div[class*="-page-content"] {
   p {
     font-size: 16px;
   }
-  .button-bar {
+  .button-container {
     a {
       line-height: 100%;
       display: flex;
@@ -352,7 +348,7 @@ div[class*="-page-content"] {
   .question-option {
     border: none;
   }
-  .button-bar {
+  .button-container {
     a {
       justify-content: center;
     }
