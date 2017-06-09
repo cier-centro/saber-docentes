@@ -199,6 +199,13 @@ div[class*="-page-content"] {
 .question-counter {
   display: flex;
   justify-content: flex-end;
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  padding: 15px 5%;
+  /*padding: 20px 5%;
+  background: $green-background;
+  @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));*/
 
   .counter-container {
     position: relative;

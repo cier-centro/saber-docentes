@@ -7,7 +7,8 @@
   padding: 20px 10%;
   margin-top: $main-header-height;
 
-  & + ion-content {
+  & + ion-content,
+  & + .question-counter + ion-content {
     margin-top: $main-header-height + 108px !important;
   }
 
@@ -40,7 +41,8 @@
       margin-top: 0 !important;
     }
 
-    & + ion-content {
+    & + ion-content,
+    & + .question-counter + ion-content {
       margin-top: 108px !important;
     }
   }

@@ -11,6 +11,15 @@
         <div>{{header_data.level}}</div>
       </div>
     </div>
+    <div class="question-counter">
+      <div class="counter-container">
+        <span></span>
+        <div class="counter-text">
+          <b>Pregunta</b>
+          {{data.numberofquestions}}/{{data.max_questions}}
+        </div>
+      </div>
+    </div>
     <ion-content padding="true">
       <!--<div class="row">
 				<div class="col-100">
@@ -18,15 +27,6 @@
         </div>
 			</div>-->
       <div class="select-questions-page-content">
-        <div class="question-counter">
-          <div class="counter-container">
-            <span></span>
-            <div class="counter-text">
-              <b>Pregunta</b>
-              {{data.numberofquestions}}/{{data.max_questions}}
-            </div>
-          </div>
-        </div>
         <form id="question_list" class="list">
           <h4 id="page3-heading3">DBA SELECCIONADOS</h4>
             <ion-list>
