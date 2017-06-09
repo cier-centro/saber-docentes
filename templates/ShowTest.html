@@ -12,8 +12,8 @@
       </div>
     </div>
     <ion-content padding="true">
-      <div class="show-test-content">
-        <h4>HOJA DE RESULTADOS</h4>
+      <div class="show-test-page-content">
+        <h4>HOJA DE PREGUNTAS</h4>
         <div class="row question-info-container" ng-repeat="question in questions track by $index">
           <div class="col">
             <h5><b>PREGUNTA {{$index+1}}:</b> ({{question.question.cod_question}})</h5>
@@ -66,15 +66,15 @@
               <div class="col">
                   <div class="row responsive-lg">
                       <div class="col">
-                        <a class="button button-block" ng-click="Print()">
+                        <a class="button button-block load-button" ng-click="Print()">
                           <span></span>
                           Descargar PDF
                         </a>
                       </div>
                       <div class="col">
-                        <a class="button button-block" ng-click="saveQuestionary()">
+                        <a class="button button-block load-button" ng-click="saveQuestionary()">
                           <span></span>
-                          Archivo plano
+                          Descargar Archivo plano
                         </a>
                       </div>
                   </div>
@@ -82,9 +82,9 @@
               <div class="col">
                   <div class="row responsive-lg">
                     <div class="col">
-                      <a class="button button-block" ng-click="answerSheet()">
+                      <a class="button button-block load-button" ng-click="answerSheet()">
                         <span></span>
-                        Respuestas
+                        Descargar Respuestas
                       </a>
                     </div>
                     <div class="col">

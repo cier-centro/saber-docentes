@@ -60,7 +60,7 @@ ion-content {
   }
 }
 
-.start-content, .create-test-content, .select-dbas-content, .select-questions-content, .show-test-content {
+div[class*="-page-content"] {
   padding: 50px 5%;
 
   h1 {
@@ -75,7 +75,7 @@ ion-content {
   }
 }
 
-.start-content {
+.start-page-content {
   .start-image {
     background: url('../../../img/img_start_content.png') no-repeat center/contain;
     min-height: 300px;
@@ -86,13 +86,13 @@ ion-content {
   float: right;
 }
 
-.create-test-content {
+.create-test-page-content {
   #page-button-bar9 {
     margin: 40px 10px 40px;
   }
 }
 
-.select-dbas-content {
+.select-dbas-page-content {
   #page-button-bar9 {
     margin: 40px 10px 40px;
   }
@@ -143,7 +143,7 @@ ion-content {
   }
 }
 
-.select-questions-content {
+.select-questions-page-content {
   .dba-title {
     .item {
       margin: 0;
@@ -230,43 +230,7 @@ ion-content {
   }
 }
 
-.show-test-content {
-  .row {
-    padding: 0;
-
-    & > .col {
-      padding: 0;
-    }
-    &:first-child {
-      margin: 0 !important;
-    }
-  }
-  .question-info-container {
-    margin: 10px 0;
-    background: white;
-
-    .question-info {
-      padding: 30px !important;
-      @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));
-
-      .question-option:last-child {
-        border: none;
-      }
-    }
-
-    h4 {
-      text-align: left;
-      padding: 10px 0;
-      font-size: 15px;
-    }
-  }
-  h5 {
-    padding: 7px 15px;
-    @extend .dba-title-style;
-  }
-  p {
-    font-size: 16px;
-  }
+.show-test-page-content {
   .button-bar {
     .col {
       @media (min-width: 1024px) {
@@ -321,6 +285,69 @@ ion-content {
           }
         }
       }
+    }
+    a {
+      text-align: left;
+    }
+  }
+}
+.show-test-page-content, .show-answers-page-content {
+  .row {
+    padding: 0;
+
+    & > .col {
+      padding: 0;
+    }
+    &:first-child {
+      margin: 0 !important;
+    }
+  }
+  h5 {
+    padding: 7px 15px;
+    @extend .dba-title-style;
+  }
+  .question-info-container {
+    margin: 10px 0;
+    background: white;
+
+    .question-info {
+      padding: 30px !important;
+      @include shadow-properties(inset 0px 76px 15px -70px rgba(0,0,0,0.4));
+
+      .question-option:last-child {
+        border: none;
+      }
+    }
+
+    h4 {
+      text-align: left;
+      padding: 10px 0;
+      font-size: 15px;
+    }
+  }
+  p {
+    font-size: 16px;
+  }
+  .button-bar {
+    a {
+      line-height: 100%;
+      display: flex;
+      align-items: center;
+
+      span {
+        height: 45px;
+      }
+    }
+  }
+}
+
+.show-answers-page-content {
+  .question-option {
+    border: none;
+  }
+  .button-bar {
+    a {
+      justify-content: center;
     }
   }
 }

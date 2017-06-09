@@ -39,6 +39,11 @@ ion-content {
       background-position: -498px -168px;
     }
   }
+  .load-button {
+    span {
+      background-position: -498px -119px;
+    }
+  }
   .load-reading-button {
     background: $selected-option-background;
 
@@ -80,7 +85,7 @@ ion-content {
   }
 }
 
-.start-content {
+.start-page-content {
   .button {
     span {
       background-position: -25px -100px;
@@ -88,7 +93,7 @@ ion-content {
   }
 }
 
-.create-test-content {
+.create-test-page-content {
   .manual-button {
     span {
       background-position: -24px -178px;
@@ -101,7 +106,7 @@ ion-content {
   }
 }
 
-.select-dbas-content {
+.select-dbas-page-content {
   .button {
     span {
       background-position: -24px -178px;
@@ -109,7 +114,7 @@ ion-content {
   }
 }
 
-.select-questions-content {
+.select-questions-page-content {
   .questions-list {
     &.opened-list {
       .more-info-button-container {
