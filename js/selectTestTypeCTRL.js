@@ -20,7 +20,7 @@ cont_angular.controller('selectTestTypeCTRL', ['$scope', '$stateParams', '$http'
           if (hasError) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Datos faltantes',
-                template: 'Debe agregar todos sus datos para continuar'
+                template: 'Debe llenar todos los campos para continuar'
             });
             return false;
           }

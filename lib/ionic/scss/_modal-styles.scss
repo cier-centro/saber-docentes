@@ -23,6 +23,25 @@
   }
 }
 
+.modal-title-style {
+  color: white;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  margin: 0 !important;
+  padding: 0 15px;
+  text-transform: uppercase;
+  left: 0 !important;
+}
+.cancel-modal-button-style {
+  background: rgba($warning-background, 0.3);
+  border-bottom: 2px solid $informative-content-background;
+  color: $cancel-modal-text;
+  font-weight: 600;
+}
+.cancel-modal-button-hover {
+  color: $cancel-modal-text;
+  background: rgba($warning-background, 0.7);
+}
 ion-modal-view {
   h4 {
     text-align: left !important;
@@ -33,13 +52,7 @@ ion-modal-view {
 
     h4 {
       width: calc(100% - 50px);
-      color: white;
-      font-weight: 600 !important;
-      font-size: 16px !important;
-      margin: 0 !important;
-      padding: 0 15px;
-      text-transform: uppercase;
-      left: 0 !important;
+      @extend .modal-title-style;
     }
     button {
       color: white !important;
@@ -69,14 +82,11 @@ ion-modal-view {
       }
     }
     .cancel-modal-button {
-      background: rgba($warning-background, 0.1);
-      border-bottom-color: $informative-content-background;
-      color: $cancel-modal-text;
+      @extend .cancel-modal-button-style;
       margin-top: 25px;
 
       &:hover {
-        color: $cancel-modal-text;
-        background: rgba($warning-background, 0.4);
+        @extend .cancel-modal-button-hover;
       }
 
       span {

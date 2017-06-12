@@ -10124,20 +10124,32 @@ form .item-select, form .item-input {
     border-radius: 50%;
     margin: 0 15px; }
 
+.modal-title-style, ion-modal-view ion-header-bar h4, .popup .popup-head h3 {
+  color: white;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  margin: 0 !important;
+  padding: 0 15px;
+  text-transform: uppercase;
+  left: 0 !important; }
+
+.cancel-modal-button-style, ion-modal-view ion-content .cancel-modal-button, .popup .popup-buttons .button {
+  background: rgba(189, 225, 227, 0.3);
+  border-bottom: 2px solid #2CB4AD;
+  color: #e05032;
+  font-weight: 600; }
+
+.cancel-modal-button-hover, ion-modal-view ion-content .cancel-modal-button:hover, .popup .popup-buttons .button:hover {
+  color: #e05032;
+  background: rgba(189, 225, 227, 0.7); }
+
 ion-modal-view h4 {
   text-align: left !important; }
 ion-modal-view ion-header-bar {
   background: #ec6745 !important;
   border: none !important; }
   ion-modal-view ion-header-bar h4 {
-    width: calc(100% - 50px);
-    color: white;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    margin: 0 !important;
-    padding: 0 15px;
-    text-transform: uppercase;
-    left: 0 !important; }
+    width: calc(100% - 50px); }
   ion-modal-view ion-header-bar button {
     color: white !important; }
     ion-modal-view ion-header-bar button:before {
@@ -10155,14 +10167,28 @@ ion-modal-view ion-content {
   ion-modal-view ion-content .header_question_container .header_text, ion-modal-view ion-content .header_question_container .header_text * {
     font-size: 16px; }
   ion-modal-view ion-content .cancel-modal-button {
-    background: rgba(189, 225, 227, 0.1);
-    border-bottom-color: #2CB4AD;
-    color: #e05032;
     margin-top: 25px; }
-    ion-modal-view ion-content .cancel-modal-button:hover {
-      color: #e05032;
-      background: rgba(189, 225, 227, 0.4); }
     ion-modal-view ion-content .cancel-modal-button span {
       background-position: -434px -298px; }
+
+/**
+ * Popup Styles
+ * --------------------------------------------------
+ */
+.popup {
+  background: white !important; }
+  .popup .popup-head {
+    background: #ec6745;
+    border: none; }
+  .popup .popup-body {
+    -webkit-box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 76px 15px -70px rgba(0, 0, 0, 0.4);
+    padding: 20px 10px 10px; }
+  .popup .popup-buttons .button {
+    border-top: 2px solid #2CB4AD;
+    background: rgba(189, 225, 227, 0.5); }
+    .popup .popup-buttons .button:hover {
+      background: rgba(189, 225, 227, 0.8); }
 
 /*# sourceMappingURL=ionic.css.map */
