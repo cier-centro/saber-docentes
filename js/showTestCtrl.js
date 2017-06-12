@@ -116,8 +116,25 @@ cont_angular.controller('showTestCtrl', ['$scope', '$stateParams', '$ionicPopup'
             selected_questions = [];
             current_question = 0;
             user_answers = {};
-            $state.go('dbasselection')
+            $state.go('start')
         }
+
+        $scope.backToQuestion = function () {
+          if(selected_option=="manual"){
+            selected_questions = [];
+            $state.go('selectQuestions')
+          }else{
+            selected_dbas = [];
+            max_questions = 0;
+            user_name = "";
+            questions_data = {};
+            selected_questions = [];
+            current_question = 0;
+            user_answers = {};
+            $state.go('select_test_type')
+          }
+        }
+
         $scope.savePDF = function () {
 
             var doc = new jsPDF();

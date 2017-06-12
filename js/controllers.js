@@ -8,6 +8,7 @@ var current_question = 0;
 var user_answers = {};
 var selected_level= 0;
 var selected_asignare = "Y";
+var selected_option = "";
 
 function shuffle(a) {
     var j, x, i;

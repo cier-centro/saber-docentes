@@ -4,6 +4,10 @@ cont_angular.controller('selectDbasCTRL', ['$scope', '$stateParams', '$http', '$
         $scope.header_data = {test:test_name,asignature:selected_asignare,level:selected_level}
         $scope.dbas = []
 
+        $scope.goBack = function () {
+          $state.go('select_test_type');
+        }
+
         $scope.getDbaData = function () {
   				var url = "data/dbas/"+$scope.data.grade+$scope.data.id_asignature+".json";
   				if(ionic.Platform.isAndroid()){

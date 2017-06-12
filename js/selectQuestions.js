@@ -2,6 +2,7 @@ cont_angular.controller('selectQuestionsCtrl', ['$scope', '$stateParams', '$http
 function ($scope, $stateParams, $http, $state, $ionicPopup, $ionicModal, $ionicScrollDelegate) {
 
   if (selected_dbas.length == 0) {
+    selected_questions = [];
     $state.go("dbasselection");
   }
 
@@ -49,7 +50,7 @@ $scope.setCounter = function (e) {
 };
 
 $scope.Return = function () {
-  $state.go("dbasselection");
+  $state.go("select_dba");
 };
 
 $scope.Print = function () {
@@ -115,6 +116,7 @@ $scope.toggleGroup = function (group) {
 };
 
 $scope.isGroupShown = function (group) {
+  $ionicScrollDelegate.resize();
   return $scope.shownGroup === group;
 };
 
