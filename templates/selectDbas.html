@@ -27,9 +27,20 @@
                 </div>
             </ion-list>
         </form>
-        <div id="page-button-bar9" class="pull-right">
-          <div>
-              <button id="page-button12" class="button" ng-click="saveSelectedDbas()"><span></span>Seleccionar Preguntas</button>
+        <div id="page-button-bar9" class="row row responsive-md button-container">
+          <div class="col">
+            <a class="button button-block back-button" ng-click="goBack()">
+              <span></span>
+              Atrás
+            </a>
+          </div>
+          <div class="col empty-col">
+          </div>
+          <div class="col">
+            <button id="page-button12" class="button button-block select-questions-button" ng-click="saveSelectedDbas()">
+              <span></span>
+              Seleccionar Preguntas
+            </button>
           </div>
         </div>
       </div>

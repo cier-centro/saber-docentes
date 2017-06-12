@@ -24,6 +24,11 @@ ion-content {
       background-color: rgba(255, 255, 255, 0.1);
     }
   }
+  .select-questions-button {
+    span {
+      background-position: -24px -178px;
+    }
+  }
   .back-button {
     span {
       background-position: -433px -169px;
@@ -106,14 +111,6 @@ ion-content {
   }
 }
 
-.select-dbas-page-content {
-  .button {
-    span {
-      background-position: -24px -178px;
-    }
-  }
-}
-
 .select-questions-page-content {
   .questions-list {
     &.opened-list {
@@ -152,7 +149,30 @@ ion-content {
       }
     }
   }
+}
 
+.button-container {
+  a, button {
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    span {
+      height: 45px;
+    }
+  }
+  @media (max-width: 767px) {
+    .empty-col {
+      margin: 0 !important;
+      padding: 0 !important
+    }
+  }
+}
+
+.select-questions-page-content,
+.select-dbas-page-content {
   .button-container {
     @media (min-width: 768px) {
       .col {

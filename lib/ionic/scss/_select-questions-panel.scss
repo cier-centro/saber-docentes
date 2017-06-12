@@ -87,19 +87,4 @@
       }
     }
   }
-
-  .button-container {
-    @media (min-width: 768px) {
-      .col {
-        &:first-child, &:last-child {
-          @include flex(0, 0, 40%);
-          max-width: 40%;
-        }
-        &:nth-child(2) {
-          @include flex(0, 0, 20%);
-          max-width: 20%;
-        }
-      }
-    }
-  }
 }
