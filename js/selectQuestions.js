@@ -137,7 +137,7 @@ $scope.showDetail = function ($event, question) {
     return String.fromCharCode(65 + index);
   };
 
-  var template = '<ion-modal-view><ion-header-bar><h4 class="title">Pregunta {{questionToDetail.cod_question}}</h4><div class="buttons"><button class="button button-icon ion-close" ng-click="popover.hide()"></button></div></ion-header-bar><ion-content>'
+  var template = '<ion-modal-view><ion-header-bar><h4 class="title">Pregunta {{questionToDetail.cod_question}}</h4><div class="buttons"><button class="button button-icon ion-close" ng-click="popover.remove()"></button></div></ion-header-bar><ion-content>'
 
   template += '<div class="header_question_container">'
   template += '<div class="header_text" align="justify">'
@@ -186,7 +186,7 @@ $scope.showDetail = function ($event, question) {
   template += '</div>'
   template += '</div>'
   template += '<div class="buttons" style="text-align: right;">'
-  template += '<button class="button cancel-modal-button" ng-click="popover.hide()"><span></span>Cancelar</button>'
+  template += '<button class="button cancel-modal-button" ng-click="popover.remove()"><span></span>Cancelar</button>'
   template += '</div>'
   template += '</ion-content></ion-modal-view>';
   $scope.popover = $ionicModal.fromTemplate(template, {

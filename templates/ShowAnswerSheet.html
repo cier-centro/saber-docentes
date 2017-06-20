@@ -10,7 +10,6 @@
               <h4>Respuesta:</h4>
               <div class="question-option" ng-repeat="option in question.question.answers track by $index" >
                 <div class="row row-center" ng-if="option.is_correct">
-                  <span class="bullet"></span>
                   <div id="mathContainer" ng-if="option.header_answer.endsWith('.jpg') || option.header_answer.endsWith('.png')" >
                     <span class="bullet"></span><img src="contents/{{option.header_answer}}" style="width:100%">
                   </div>
