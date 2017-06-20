@@ -17,8 +17,10 @@ cont_angular.controller('showTestCtrl', ['$scope', '$stateParams', '$ionicPopup'
         var renderCanvas = function(){
           for(var q in user_answers){
             var que=user_answers[q].question
-            if(que.type==1){
-              $scope.loadPDFAng(que.file, q)
+            if (que.file){
+              if(que.file.endsWith(".pdf")){
+                $scope.loadPDFAng(que.file, q)
+              }
             }
           }
         }

@@ -17,7 +17,7 @@ function ($scope, $stateParams, $http, $state, $ionicPopup, $ionicModal, $ionicS
     }
     $http.get(url).success(function(response){
       console.log(selected_dbas)
-      console.log(response)
+      //console.log(response)
       for (var o in selected_dbas){
         console.log(o)
         if (response[selected_dbas[o]]){
@@ -152,9 +152,9 @@ $scope.showDetail = function ($event, question) {
     default:
     template += '<div class="card">'
     template += '<div class="item item-text-wrap">'
-    if ($scope.questionToDetail.type == '2') {
-      template += '{{questionToDetail.file}}'
-    } else if ($scope.questionToDetail.type == '1') {
+    var f = $scope.questionToDetail.file
+
+    if (f.endsWith(".pdf")) {
       template += '<div>'
       template += '<button id="load" class="button button-block load-reading-button" ng-click="loadPDFAng(questionToDetail.file)"><span></span>Cargar lectura</button>'
       template += '<button id="prev" class="button button-balanced" style="display:none">Pagina Anterior</button>'
@@ -163,8 +163,10 @@ $scope.showDetail = function ($event, question) {
       template += '</div>'
       template += '<canvas id="pdf_viewer" class="row" style="height: 800px;display:none"></canvas>'
 
-    } else if ($scope.questionToDetail.type == '3') {
+    } else if (f.endsWith(".jpg") || f.endsWith(".png")) {
       template += '<img src="contents/' + $scope.questionToDetail.file + '" class="row">'
+    }else{
+      template += '{{questionToDetail.file}}'
     }
     template += '</div>'
     template += '</div>'
@@ -174,7 +176,12 @@ $scope.showDetail = function ($event, question) {
   template += '<div class="question-options">'
   template += '<div ng-repeat="answer in questionToDetail.answers" class="question-option" align="justify">'
   template += '<div class="row row-center">'
+  template += '<div id="mathContainer" ng-if="answer.header_answer.endsWith(\'.jpg\') || answer.header_answer.endsWith(\'.png\')" >'
+  template += '<span class="bullet"></span><img src="contents/{{answer.header_answer}}">'
+  template += '</div>'
+  template += '<div id="mathContainer" ng-if="!answer.header_answer.endsWith(\'.jpg\') && !answer.header_answer.endsWith(\'.png\')" >'
   template += '<span class="bullet"></span>{{answer.header_answer}}'
+  template += '</div>'
   template += '</div>'
   template += '</div>'
   template += '</div>'

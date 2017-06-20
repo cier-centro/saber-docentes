@@ -11,32 +11,19 @@
               <div class="question-option" ng-repeat="option in question.question.answers track by $index" >
                 <div class="row row-center" ng-if="option.is_correct">
                   <span class="bullet"></span>
-                  <div>
-                    {{option.header_answer}}
+                  <div id="mathContainer" ng-if="option.header_answer.endsWith('.jpg') || option.header_answer.endsWith('.png')" >
+                    <span class="bullet"></span><img src="contents/{{option.header_answer}}" style="width:100%">
+                  </div>
+                  <div id="mathContainer" ng-if="!option.header_answer.endsWith('.jpg') && !option.header_answer.endsWith('.png')" >
+                    <span class="bullet"></span>{{option.header_answer}}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-            <!--<div class="col-20">
-                <a class="button button-royal button-block icon-left ion-eye" ng-click="showQuestion(question)">Pregunta {{$index+1}}</a>
-            </div>
-            <div class="col-20" ng-repeat="option in question.question.answers track by $index">
-                {{option.header_answer}}
-                <i class="icon ion-checkmark balanced button button-block" ng-if="$index == question.selected_index && option.is_correct"></i>
-                <i class="icon ion-close-circled assertive button button-block" ng-if="$index == question.selected_index && !option.is_correct"></i>
-            </div>-->
+
         </div>
-        <!--<div class="row" ng-repeat="question in questions track by $index">
-            <div class="col-20">
-                <a class="button button-royal button-block icon-left ion-eye" ng-click="showQuestion(question)">Pregunta {{$index+1}}</a>
-            </div>
-            <div class="col-20" ng-repeat="option in question.question.answers track by $index">
-                {{option.header_answer}}
-                <i class="icon ion-checkmark balanced button button-block" ng-if="$index == question.selected_index && option.is_correct"></i>
-                <i class="icon ion-close-circled assertive button button-block" ng-if="$index == question.selected_index && !option.is_correct"></i>
-            </div>
-        </div>-->
+
         <div class="button-container">
           <div class="row responsive-sm">
             <div class="col">

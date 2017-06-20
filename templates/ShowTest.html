@@ -20,46 +20,33 @@
             <div class="question-info">
               <p>{{question.question.header_question}}</p>
               <div class="item item-text-wrap">
-                <div id="mathContainer" ng-if="question.question.type=='2'">
+                <div id="mathContainer" ng-if="!question.question.file.endsWith('.pdf') && !(question.question.file.endsWith('.jpg') || question.question.file.endsWith('.png'))">
                     {{question.question.file}}
                 </div>
-                <div id="mathContainer" ng-if="question.question.type=='1'">
+                <div id="mathContainer" ng-if="question.question.file.endsWith('.pdf')">
                     <canvas id="pdf_viewer_{{$index}}" style="width:100%"></canvas>
                 </div>
-                <div id="mathContainer" ng-if="question.question.type=='3'" >
+                <div id="mathContainer" ng-if="question.question.file.endsWith('.jpg') || question.question.file.endsWith('.png')" >
                     <img src="contents/{{question.question.file}}" class="row" >
                 </div>
               </div>
               <h4>Respuestas:</h4>
               <div>
                 <div ng-repeat="option in question.question.answers track by $index"  class="question-option">
-                  <div class="row row-center">
+                  <div id="mathContainer" ng-if="option.header_answer.endsWith('.jpg') || option.header_answer.endsWith('.png')" >
+                    <span class="bullet"></span><img src="contents/{{option.header_answer}}" style="width:100%">
+                  </div>
+                  <div id="mathContainer" ng-if="!option.header_answer.endsWith('.jpg') && !option.header_answer.endsWith('.png')" >
                     <span class="bullet"></span>{{option.header_answer}}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-            <!--<div class="col-20">
-                <a class="button button-royal button-block icon-left ion-eye" ng-click="showQuestion(question)">Pregunta {{$index+1}}</a>
-            </div>
-            <div class="col-20" ng-repeat="option in question.question.answers track by $index">
-                {{option.header_answer}}
-                <i class="icon ion-checkmark balanced button button-block" ng-if="$index == question.selected_index && option.is_correct"></i>
-                <i class="icon ion-close-circled assertive button button-block" ng-if="$index == question.selected_index && !option.is_correct"></i>
-            </div>-->
+
         </div>
 
-        <!--<div class="row" ng-repeat="question in questions track by $index">
-            <div class="col-20">
-                <a class="button button-royal button-block icon-left ion-eye" ng-click="showQuestion(question)">Pregunta {{$index+1}}</a>
-            </div>
-            <div class="col-20" ng-repeat="option in question.question.answers track by $index">
-                {{option.header_answer}}
-                <i class="icon ion-checkmark balanced button button-block" ng-if="$index == question.selected_index && option.is_correct"></i>
-                <i class="icon ion-close-circled assertive button button-block" ng-if="$index == question.selected_index && !option.is_correct"></i>
-            </div>
-        </div>-->
+
 
         <div class="button-container">
             <div class="row responsive-md">
