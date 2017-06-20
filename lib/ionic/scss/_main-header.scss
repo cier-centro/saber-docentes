@@ -21,12 +21,7 @@
     align-items: center;
 
     div:first-child {
-      background: url('../../../img/logo_header_girl.gif') no-repeat center/contain;
-      @extend .logo-container-item-size;
-    }
-    div:nth-child(2) {
-      background: url('../../../img/logo_header_owl.gif') no-repeat center/contain;
-      margin: 0 10px 0 15px;
+      background: url('../../../img/logo_header.png') no-repeat center/contain;
       @extend .logo-container-item-size;
     }
     .title-container {
