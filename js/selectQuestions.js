@@ -166,7 +166,7 @@ $scope.showDetail = function ($event, question) {
     } else if (f.endsWith(".jpg") || f.endsWith(".png")) {
       template += '<img src="contents/' + $scope.questionToDetail.file + '" class="row">'
     }else{
-      template += '{{questionToDetail.file}}'
+      template += '{{"$$"+questionToDetail.file+"$$"}}'
     }
     template += '</div>'
     template += '</div>'
