@@ -27,178 +27,173 @@ function ($scope, $stateParams, $http, $state, $ionicPopup, $ionicModal, $ionicS
       console.log($scope.dbas)
       questions_data = $scope.dbas;
     });
-    /*console.log(selected_dbas)
-    $http.post("quiz/get-questions", {"dba_list": selected_dbas}).then(function (r) {
-    $scope.dbas = r.data;
-    questions_data = r.data;
-  });*/
-};
-
-$scope.$on('$ionicView.enter', function () {
-  $scope.getQuesitonsData()
-  $scope.data = {"max_questions": max_questions, "numberofquestions": 0}
-});
-
-$scope.setCounter = function (e) {
-  if (e.target.checked && $scope.data.numberofquestions < $scope.data.max_questions) {
-    $scope.data.numberofquestions++;
-  } else if (!e.target.checked) {
-    $scope.data.numberofquestions--;
-  } else {
-    e.target.checked = false;
-  }
-};
-
-$scope.Return = function () {
-  $state.go("select_dba");
-};
-
-$scope.Print = function () {
-  const electron= nodeRequire('electron').remote;
-  const fs = nodeRequire('fs');
-  let win = electron.BrowserWindow.getFocusedWindow();
-  console.log(win)
-  win.webContents.printToPDF({
-    landscape: true
-  }, function(err, data) {
-    var dist = 'C:\\Users\\jeanpierre\\Desktop\\test.pdf'
-    fs.writeFile(dist, data, function(err) {
-      if(err) alert('genearte pdf error', err)
-    })
-  })
-};
-
-$scope.showTest = function () {
-  if ($scope.data.numberofquestions == 0) {
-    var alertPopup = $ionicPopup.alert({
-      title: 'Seleccione Preguntas',
-      template: 'Debe seleccionar preguntas para poder continuar.'
-    });
-
-    alertPopup.then(function (res) {
-      console.log('Thank you for not eating my delicious ice cream cone');
-    });
-    return null;
-  }
-
-  var inputs = document.getElementById('question_list').elements;
-
-  for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].checked) {
-      selected_questions.push(inputs[i].name)
-    }
-  }
-
-  shuffle(selected_questions);
-  current_question = 0;
-
-  for (var i in questions_data) {
-    for (var j in questions_data[i]["questions"]) {
-      var q = questions_data[i]["questions"][j].answers;
-      shuffle(q);
-      questions_data[i]["questions"][j].answers = q;
-    }
-  }
-
-  max_questions = $scope.data.max_questions;
-
-  $state.go("show_test");
-
-}
-
-$scope.toggleGroup = function (group) {
-  if ($scope.isGroupShown(group))
-  $scope.shownGroup = null;
-  else
-  $scope.shownGroup = group;
-
-  $ionicScrollDelegate.resize();
-};
-
-$scope.isGroupShown = function (group) {
-  $ionicScrollDelegate.resize();
-  return $scope.shownGroup === group;
-};
-
-$scope.loadPDFAng = function (file) {
-  pdfname = "contents/" + file;
-  LoadPDF();
-  $ionicScrollDelegate.resize();
-}
-
-$scope.showDetail = function ($event, question) {
-  if ($scope.popover != null) {
-    $scope.popover.remove();
-  }
-
-  $scope.questionToDetail = question;
-
-  $scope.getLetter = function (index) {
-    return String.fromCharCode(65 + index);
   };
 
-  var template = '<ion-modal-view><ion-header-bar><h4 class="title">Pregunta {{questionToDetail.cod_question}}</h4><div class="buttons"><button class="button button-icon ion-close" ng-click="popover.remove()"></button></div></ion-header-bar><ion-content>'
+  $scope.$on('$ionicView.enter', function () {
+    $scope.getQuesitonsData()
+    $scope.data = {"max_questions": max_questions, "numberofquestions": 0}
+  });
 
-  template += '<div class="header_question_container">'
-  template += '<div class="header_text" align="justify">'
-  template += '<h2>{{questionToDetail.header_question}}</h2>'
-  template += '</div>'
-  template += '</div>'
-  switch ($scope.questionToDetail.file) {
-    case null:
-    break;
-    case 'NA':
-    break;
-    default:
-    template += '<div class="card">'
-    template += '<div class="item item-text-wrap">'
-    var f = $scope.questionToDetail.file
-
-    if (f.endsWith(".pdf")) {
-      template += '<div>'
-      template += '<button id="load" class="button button-block load-reading-button" ng-click="loadPDFAng(questionToDetail.file)"><span></span>Cargar lectura</button>'
-      template += '<button id="prev" class="button button-balanced" style="display:none">Pagina Anterior</button>'
-      template += '<button id="next" class="button button-balanced" style="display:none">Pagina Siguiente</button>'
-      template += '<span id="detail" style="display:none">Pagina: <span id="page_num"></span> / <span id="page_count"></span></span>'
-      template += '</div>'
-      template += '<canvas id="pdf_viewer" class="row" style="height: 800px;display:none"></canvas>'
-
-    } else if (f.endsWith(".jpg") || f.endsWith(".png")) {
-      template += '<img src="contents/' + $scope.questionToDetail.file + '" class="row">'
-    } else if (!f.endsWith('.pdf') && !(f.endsWith('.jpg') || f.endsWith('.png')) && f!='' && f!=null) {
-      template += '{{"$$"+questionToDetail.file+"$$"}}'
+  $scope.setCounter = function (e) {
+    if (e.target.checked && $scope.data.numberofquestions < $scope.data.max_questions) {
+      $scope.data.numberofquestions++;
+    } else if (!e.target.checked) {
+      $scope.data.numberofquestions--;
+    } else {
+      e.target.checked = false;
     }
-    template += '</div>'
-    template += '</div>'
+  };
+
+  $scope.Return = function () {
+    $state.go("select_dba");
+  };
+
+  /*$scope.Print = function () {
+    const electron= nodeRequire('electron').remote;
+    const fs = nodeRequire('fs');
+    let win = electron.BrowserWindow.getFocusedWindow();
+    console.log(win)
+    win.webContents.printToPDF({
+      landscape: true
+    }, function(err, data) {
+      var dist = 'C:\\Users\\jeanpierre\\Desktop\\test.pdf'
+      fs.writeFile(dist, data, function(err) {
+        if(err) alert('genearte pdf error', err)
+      })
+    })
+  };*/
+
+  $scope.showTest = function () {
+    if ($scope.data.numberofquestions == 0) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Seleccione Preguntas',
+        template: 'Debe seleccionar preguntas para poder continuar.'
+      });
+
+      alertPopup.then(function (res) {
+        console.log('Thank you for not eating my delicious ice cream cone');
+      });
+      return null;
+    }
+
+    var inputs = document.getElementById('question_list').elements;
+
+    for (var i = 0; i < inputs.length; i++) {
+      if (inputs[i].checked) {
+        selected_questions.push(inputs[i].name)
+      }
+    }
+
+    shuffle(selected_questions);
+    current_question = 0;
+
+    for (var i in questions_data) {
+      for (var j in questions_data[i]["questions"]) {
+        var q = questions_data[i]["questions"][j].answers;
+        shuffle(q);
+        questions_data[i]["questions"][j].answers = q;
+      }
+    }
+
+    max_questions = $scope.data.max_questions;
+
+    $state.go("show_test");
+
   }
 
-  template += '<h4>Respuestas:</h4>'
-  template += '<div class="question-options">'
-  template += '<div ng-repeat="answer in questionToDetail.answers" class="question-option" align="justify">'
-  template += '<div class="row row-center">'
-  template += '<div id="mathContainer" ng-if="answer.header_answer.endsWith(\'.jpg\') || answer.header_answer.endsWith(\'.png\')" >'
-  template += '<span class="bullet"></span><img src="contents/{{answer.header_answer}}">'
-  template += '</div>'
-  template += '<div id="mathContainer" ng-if="!answer.header_answer.endsWith(\'.jpg\') && !answer.header_answer.endsWith(\'.png\')" >'
-  template += '<span class="bullet"></span>{{answer.header_answer}}'
-  template += '</div>'
-  template += '</div>'
-  template += '</div>'
-  template += '</div>'
-  template += '<div class="buttons" style="text-align: right;">'
-  template += '<button class="button cancel-modal-button" ng-click="popover.remove()"><span></span>Cancelar</button>'
-  template += '</div>'
-  template += '</ion-content></ion-modal-view>';
-  $scope.popover = $ionicModal.fromTemplate(template, {
-    scope: $scope,
-  });
-  $scope.popover.show($event);
-  $scope.$on('modal.shown', function () {
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-  });
+  $scope.toggleGroup = function (group) {
+    if ($scope.isGroupShown(group))
+    $scope.shownGroup = null;
+    else
+    $scope.shownGroup = group;
 
-  //alert("llego")
-};
+    $ionicScrollDelegate.resize();
+  };
+
+  $scope.isGroupShown = function (group) {
+    $ionicScrollDelegate.resize();
+    return $scope.shownGroup === group;
+  };
+
+  $scope.loadPDFAng = function (file) {
+    pdfname = "contents/" + file;
+    LoadPDF();
+    $ionicScrollDelegate.resize();
+  }
+
+  $scope.showDetail = function ($event, question) {
+    if ($scope.popover != null) {
+      $scope.popover.remove();
+    }
+
+    $scope.questionToDetail = question;
+
+    $scope.getLetter = function (index) {
+      return String.fromCharCode(65 + index);
+    };
+
+    var template = '<ion-modal-view><ion-header-bar><h4 class="title">Pregunta {{questionToDetail.cod_question}}</h4><div class="buttons"><button class="button button-icon ion-close" ng-click="popover.remove()"></button></div></ion-header-bar><ion-content>'
+
+    template += '<div class="header_question_container">'
+    template += '<div class="header_text" align="justify">'
+    template += '<h2>{{questionToDetail.header_question}}</h2>'
+    template += '</div>'
+    template += '</div>'
+    switch ($scope.questionToDetail.file) {
+      case null:
+      break;
+      case 'NA':
+      break;
+      default:
+      template += '<div class="card">'
+      template += '<div class="item item-text-wrap">'
+      var f = $scope.questionToDetail.file
+
+      if (f.endsWith(".pdf")) {
+        template += '<div>'
+        template += '<button id="load" class="button button-block load-reading-button" ng-click="loadPDFAng(questionToDetail.file)"><span></span>Cargar lectura</button>'
+        template += '<button id="prev" class="button button-balanced" style="display:none">Pagina Anterior</button>'
+        template += '<button id="next" class="button button-balanced" style="display:none">Pagina Siguiente</button>'
+        template += '<span id="detail" style="display:none">Pagina: <span id="page_num"></span> / <span id="page_count"></span></span>'
+        template += '</div>'
+        template += '<canvas id="pdf_viewer" class="row" style="height: 800px;display:none"></canvas>'
+
+      } else if (f.endsWith(".jpg") || f.endsWith(".png")) {
+        template += '<img src="contents/' + $scope.questionToDetail.file + '" class="row">'
+      } else if (!f.endsWith('.pdf') && !(f.endsWith('.jpg') || f.endsWith('.png')) && f!='' && f!=null) {
+        template += '{{"$$"+questionToDetail.file+"$$"}}'
+      }
+      template += '</div>'
+      template += '</div>'
+    }
+
+    template += '<h4>Respuestas:</h4>'
+    template += '<div class="question-options">'
+    template += '<div ng-repeat="answer in questionToDetail.answers" class="question-option" align="justify">'
+    template += '<div class="row row-center">'
+    template += '<div id="mathContainer" ng-if="answer.header_answer.endsWith(\'.jpg\') || answer.header_answer.endsWith(\'.png\')" >'
+    template += '<span class="bullet"></span><img src="contents/{{answer.header_answer}}">'
+    template += '</div>'
+    template += '<div id="mathContainer" ng-if="!answer.header_answer.endsWith(\'.jpg\') && !answer.header_answer.endsWith(\'.png\')" >'
+    template += '<span class="bullet"></span>{{answer.header_answer}}'
+    template += '</div>'
+    template += '</div>'
+    template += '</div>'
+    template += '</div>'
+    template += '<div class="buttons" style="text-align: right;">'
+    template += '<button class="button cancel-modal-button" ng-click="popover.remove()"><span></span>Cancelar</button>'
+    template += '</div>'
+    template += '</ion-content></ion-modal-view>';
+    $scope.popover = $ionicModal.fromTemplate(template, {
+      scope: $scope,
+    });
+    $scope.popover.show($event);
+    $scope.$on('modal.shown', function () {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    });
+
+    //alert("llego")
+  };
 
 }]);
