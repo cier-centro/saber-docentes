@@ -46,9 +46,14 @@ cont_angular.controller('showTestCtrl', ['$scope', '$stateParams', '$ionicPopup'
 
         $scope.loadPDFAng = function (file,group) {
           console.log("pdf_viewer_"+group)
+          try{
             document.getElementById("pdf_viewer_"+group).style.display="block"
             loadFirstPagePDF("contents/"+file,"pdf_viewer_"+group);
             $ionicScrollDelegate.resize();
+            }
+            catch(e){
+              console.log(e);
+            }
         }
 
         $scope.resetvariablesAndGoBack = function () {

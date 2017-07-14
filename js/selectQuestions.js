@@ -144,10 +144,13 @@ function ($scope, $stateParams, $http, $state, $ionicPopup, $ionicModal, $ionicS
       break;
       case 'NA':
       break;
+      case "":
+      break;
       default:
       template += '<div class="card">'
       template += '<div class="item item-text-wrap">'
       var f = $scope.questionToDetail.file
+      // console.log(f);
 
       if (f.endsWith(".pdf")) {
         template += '<div>'
