@@ -19,9 +19,10 @@
             <h5><b>PREGUNTA {{$index+1}}:</b> ({{question.question.cod_question}})</h5>
             <div class="question-info">
               <p>{{question.question.header_question}}</p>
-              <div class="item item-text-wrap">
-                <div id="mathContainer" ng-if="!question.question.file.endsWith('.pdf') && !(question.question.file.endsWith('.jpg') || question.question.file.endsWith('.png')) && question.question.file!=''">
+              <div class="item item-text-wrap" ng-if="!!question.question.file">
+                <div id="mathContainer" ng-if="!question.question.file.endsWith('.pdf') && !question.question.file.endsWith('.jpg') && !question.question.file.endsWith('.png')">
                     {{"$$"+question.question.file+"$$"}}
+
                 </div>
                 <div id="mathContainer" ng-if="question.question.file.endsWith('.pdf')">
                     <canvas id="pdf_viewer_{{$index}}" style="width:100%"></canvas>

@@ -59,10 +59,7 @@ cont_angular.controller('selectTestTypeCTRL', ['$scope', '$stateParams', '$http'
     						}
                 //se cargan todas las preguntas de todos los dbas de esos cursos y materias seleccionados.
     						$http.get(url).success(function(response){
-    							console.log(selected_dbas)
-    							console.log(response)
     							for (var o in selected_dbas){
-    								console.log(o)
     								if (response[selected_dbas[o]]){
     									$scope.dbas.push(response[selected_dbas[o]])
     								}

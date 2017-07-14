@@ -11,7 +11,6 @@
 //
 
 function loadFirstPagePDF(url, canvas_id){
-  console.log("cargando "+url+" en el canvas"+canvas_id)
   var url = url;
   var pdfDoc = null;
   var pageNum = 1;
@@ -128,7 +127,6 @@ function LoadPDF() {
     document.getElementById('prev').style.display = 'inline-block';
     document.getElementById('detail').style.display = 'inline-block';
     canvas.style.display = 'block';
-    console.log(canvas)
 
 }
 
